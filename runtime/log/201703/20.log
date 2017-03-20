@@ -1,0 +1,2598 @@
+[ 2017-03-20T00:00:05+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/auth_rule/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/index.html [运行时间：0.068954s][吞吐率：14.50req/s] [内存消耗：2,753.26kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/auth_rule/index.html?v=4.0',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '120',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '1',
+  'scolumnText' => 'id',
+  'searchText' => '',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 300,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->index[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001032s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.010451s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` LIKE 0 ORDER BY sort asc LIMIT 0,300 [ RunTime:0.000928s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` LIKE 0 LIMIT 1 [ RunTime:0.000616s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:00:07+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/auth_rule/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/index.html [运行时间：0.058755s][吞吐率：17.02req/s] [内存消耗：2,753.15kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/auth_rule/index.html?v=4.0',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '121',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '1',
+  'scolumnText' => 'id',
+  'searchText' => '0',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 300,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->index[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001275s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007636s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` LIKE 0 ORDER BY sort asc LIMIT 0,300 [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` LIKE 0 LIMIT 1 [ RunTime:0.000474s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:00:10+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/auth_rule/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/index.html [运行时间：0.066674s][吞吐率：15.00req/s] [内存消耗：2,753.29kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/auth_rule/index.html?v=4.0',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '121',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '1',
+  'scolumnText' => 'id',
+  'searchText' => '1',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 300,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->index[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001051s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.008255s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` LIKE 0 ORDER BY sort asc LIMIT 0,300 [ RunTime:0.000809s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` LIKE 0 LIMIT 1 [ RunTime:0.000496s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:00:12+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/auth_rule/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/index.html [运行时间：0.063657s][吞吐率：15.71req/s] [内存消耗：2,753.15kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/auth_rule/index.html?v=4.0',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '121',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '1',
+  'scolumnText' => 'id',
+  'searchText' => '2',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 300,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->index[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001039s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.009053s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` LIKE 0 ORDER BY sort asc LIMIT 0,300 [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` LIKE 0 LIMIT 1 [ RunTime:0.000533s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:00:14+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/auth_rule/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/index.html [运行时间：0.048551s][吞吐率：20.60req/s] [内存消耗：2,753.27kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/auth_rule/index.html?v=4.0',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '120',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '1',
+  'scolumnText' => 'id',
+  'searchText' => '',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 300,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->index[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000867s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007433s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` LIKE 0 ORDER BY sort asc LIMIT 0,300 [ RunTime:0.000698s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` LIKE 0 LIMIT 1 [ RunTime:0.000388s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:00:22+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/auth_rule/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/index.html [运行时间：0.055835s][吞吐率：17.91req/s] [内存消耗：2,753.17kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/auth_rule/index.html?v=4.0',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '132',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '1',
+  'scolumnText' => 'id',
+  'searchText' => '权限管理',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 300,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->index[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001073s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007515s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` LIKE 0 ORDER BY sort asc LIMIT 0,300 [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` LIKE 0 LIMIT 1 [ RunTime:0.000539s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:00:25+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/auth_rule/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/index.html [运行时间：0.084041s][吞吐率：11.90req/s] [内存消耗：2,753.20kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/auth_rule/index.html?v=4.0',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '135',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '1',
+  'scolumnText' => 'title',
+  'searchText' => '权限管理',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 300,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->index[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001842s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007822s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `title` LIKE '%权限管理%' ORDER BY sort asc LIMIT 0,300 [ RunTime:0.000706s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `title` LIKE '%权限管理%' LIMIT 1 [ RunTime:0.000502s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:00:28+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/auth_rule/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/index.html [运行时间：0.054925s][吞吐率：18.21req/s] [内存消耗：2,753.30kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/auth_rule/index.html?v=4.0',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '123',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '1',
+  'scolumnText' => 'title',
+  'searchText' => '',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 300,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->index[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000881s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007195s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `title` LIKE '%%' ORDER BY sort asc LIMIT 0,300 [ RunTime:0.000595s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `title` LIKE '%%' LIMIT 1 [ RunTime:0.000367s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:01:15+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/auth_rule/getruletree.html
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/getruletree.html [运行时间：0.069285s][吞吐率：14.43req/s] [内存消耗：2,765.09kb] [文件加载：62]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'getruletree',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/auth_rule/ruleconfig.html?v=4.0',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => '*/*',
+  'content-length' => '4',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->getRuleTree[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001144s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007631s ]
+[ sql ] [ SQL ] SELECT `id`,title text,pid parent FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL ORDER BY sort asc [ RunTime:0.000708s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group` [ RunTime:0.007892s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_auth_group` WHERE  `tb_auth_group`.`delete_time` IS NULL  AND `id` = 1 LIMIT 1 [ RunTime:0.000596s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:01:18+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/auth_rule/ruleconfig.html
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/ruleconfig.html [运行时间：0.046025s][吞吐率：21.73req/s] [内存消耗：2,744.60kb] [文件加载：62]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'ruleconfig',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/auth_rule/ruleconfig.html?v=4.0',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => '*/*',
+  'content-length' => '84',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'groupid' => '1',
+  'rules' => '16,6,5,11,13,2,3,1,15,17,14,9,8,7,18,0',
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->ruleConfig[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000897s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group` [ RunTime:0.006831s ]
+[ sql ] [ SQL ] UPDATE `tb_auth_group`  SET `rules`='16,6,5,11,13,2,3,1,15,17,14,9,8,7,18',`update_time`=1489939278  WHERE  `tb_auth_group`.`delete_time` IS NULL  AND `id` = 1 [ RunTime:0.000786s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:01:19+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.099894s][吞吐率：10.01req/s] [内存消耗：2,924.29kb] [文件加载：65]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001026s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.007533s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.008148s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007233s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000749s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.008085s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000645s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:01:20+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/menu/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/menu/index.html [运行时间：0.048872s][吞吐率：20.46req/s] [内存消耗：1,856.63kb] [文件加载：54]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Menu->index[ G:\EPP4\RCS\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\menu\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:01:20+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/menu/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/menu/index.html [运行时间：0.071184s][吞吐率：14.05req/s] [内存消耗：2,742.44kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/menu/index.html',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'max-age=0',
+  'content-length' => '117',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '',
+  'scolumnText' => '',
+  'searchText' => '',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 100,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\Menu->index[ G:\EPP4\RCS\application\admin\controller\Menu.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001128s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.009245s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL ORDER BY sort asc LIMIT 0,100 [ RunTime:0.000933s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000512s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:01:22+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html?v=4.0
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html?v=4.0 [运行时间：0.037525s][吞吐率：26.65req/s] [内存消耗：1,892.07kb] [文件加载：55]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.0',
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:02:01+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.108607s][吞吐率：9.21req/s] [内存消耗：3,078.64kb] [文件加载：67]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001079s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.008144s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.001569s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.008737s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007804s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.008507s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000617s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:02:01+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/menu/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/menu/index.html [运行时间：0.043071s][吞吐率：23.22req/s] [内存消耗：1,856.63kb] [文件加载：54]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Menu->index[ G:\EPP4\RCS\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\menu\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:02:02+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/menu/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/menu/index.html [运行时间：0.081382s][吞吐率：12.29req/s] [内存消耗：2,742.44kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/menu/index.html',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'max-age=0',
+  'content-length' => '117',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '',
+  'scolumnText' => '',
+  'searchText' => '',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 100,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\Menu->index[ G:\EPP4\RCS\application\admin\controller\Menu.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001346s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.010134s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL ORDER BY sort asc LIMIT 0,100 [ RunTime:0.000885s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000686s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:02:50+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.139103s][吞吐率：7.19req/s] [内存消耗：3,078.64kb] [文件加载：67]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000895s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.008365s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.001097s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.007748s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000702s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007649s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000771s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.007080s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000464s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:02:50+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/menu/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/menu/index.html [运行时间：0.044078s][吞吐率：22.69req/s] [内存消耗：1,856.63kb] [文件加载：54]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Menu->index[ G:\EPP4\RCS\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\menu\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:02:50+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/menu/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/menu/index.html [运行时间：0.066266s][吞吐率：15.09req/s] [内存消耗：2,742.44kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/menu/index.html',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'cache-control' => 'max-age=0',
+  'content-length' => '117',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '',
+  'scolumnText' => '',
+  'searchText' => '',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 100,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\Menu->index[ G:\EPP4\RCS\application\admin\controller\Menu.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001185s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.009005s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL ORDER BY sort asc LIMIT 0,100 [ RunTime:0.000902s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000500s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:03:37+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.114118s][吞吐率：8.76req/s] [内存消耗：3,078.61kb] [文件加载：67]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.007704s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000743s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.007147s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007158s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.006930s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000572s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:03:37+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.038504s][吞吐率：25.97req/s] [内存消耗：1,760.98kb] [文件加载：53]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:03:41+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/user/index.html?v=4.0
+[ log ] localhost:8080/rcs/public/index.php/admin/user/index.html?v=4.0 [运行时间：0.090020s][吞吐率：11.11req/s] [内存消耗：1,852.00kb] [文件加载：54]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.0',
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ G:\EPP4\RCS\application\admin\controller\User.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\user\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:03:41+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/user/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/user/index.html [运行时间：0.099817s][吞吐率：10.02req/s] [内存消耗：2,749.32kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/user/index.html?v=4.0',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '115',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '',
+  'scolumnText' => '',
+  'searchText' => '',
+  'sortName' => 'id',
+  'sortOrder' => 'desc',
+  'pageSize' => 10,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ G:\EPP4\RCS\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001118s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.008593s ]
+[ sql ] [ SQL ] SELECT `id`,`username`,`usercode`,`comname`,`comcode`,`face`,`mobile`,`tel`,`email`,`status`,`last_login_time`,`last_login_ip`,`create_time`,`update_time`,`delete_time` FROM `tb_user` WHERE  `tb_user`.`delete_time` IS NULL ORDER BY id desc LIMIT 0,10 [ RunTime:0.001056s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_user` WHERE  `tb_user`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000389s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:06:01+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.341875s][吞吐率：2.93req/s] [内存消耗：3,106.59kb] [文件加载：70]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001287s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.009323s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000978s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.008664s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.009835s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000848s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.009692s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000635s ]
+[ error ] [0]致命错误: Class 'Session' not found[G:\EPP4\RCS\runtime\temp\6a1bf8d5244d0c9a910983101a8288c2.php:35]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:06:19+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.087820s][吞吐率：11.39req/s] [内存消耗：3,078.61kb] [文件加载：67]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000925s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.007371s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000648s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.006877s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000763s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007292s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000578s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.007996s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000504s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:06:20+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.039018s][吞吐率：25.63req/s] [内存消耗：1,760.98kb] [文件加载：53]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:10:14+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.098160s][吞吐率：10.19req/s] [内存消耗：3,169.25kb] [文件加载：68]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001554s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.008671s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000730s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.007398s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007367s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000958s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.008206s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000507s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:10:14+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.038450s][吞吐率：26.01req/s] [内存消耗：1,762.02kb] [文件加载：53]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:10:22+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.094299s][吞吐率：10.60req/s] [内存消耗：3,169.36kb] [文件加载：68]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000877s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.006751s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000614s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.006865s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000701s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.006552s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.008159s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000638s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:10:22+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.041166s][吞吐率：24.29req/s] [内存消耗：1,762.02kb] [文件加载：53]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:11:24+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.107214s][吞吐率：9.33req/s] [内存消耗：3,169.42kb] [文件加载：68]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000979s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.008216s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000854s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.008516s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000982s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.008374s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000775s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.008646s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000671s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:11:24+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.042791s][吞吐率：23.37req/s] [内存消耗：1,762.02kb] [文件加载：53]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:11:40+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.097842s][吞吐率：10.22req/s] [内存消耗：3,169.42kb] [文件加载：68]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000978s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.007756s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000739s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.007681s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.006813s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.007851s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000444s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:11:40+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.041618s][吞吐率：24.03req/s] [内存消耗：1,762.02kb] [文件加载：53]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:11:58+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.125488s][吞吐率：7.97req/s] [内存消耗：3,169.36kb] [文件加载：68]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001775s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.009231s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.001013s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.011432s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000711s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.012410s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000971s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.009849s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000692s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:11:59+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.043248s][吞吐率：23.12req/s] [内存消耗：1,762.02kb] [文件加载：53]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:17:34+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.131693s][吞吐率：7.59req/s] [内存消耗：3,165.31kb] [文件加载：68]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001786s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.009086s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000762s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.009088s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000757s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.009542s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000697s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.008597s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000558s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:17:34+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.040457s][吞吐率：24.72req/s] [内存消耗：1,762.02kb] [文件加载：53]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:17:50+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.113873s][吞吐率：8.78req/s] [内存消耗：3,165.31kb] [文件加载：68]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001364s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.008988s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.001048s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.008097s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000632s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007932s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000970s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.007912s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000730s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:17:50+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.040383s][吞吐率：24.76req/s] [内存消耗：1,762.02kb] [文件加载：53]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:19:10+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.086573s][吞吐率：11.55req/s] [内存消耗：3,169.00kb] [文件加载：68]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/Login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001130s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.008527s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000727s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.006927s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007745s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000718s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.007150s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000532s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:19:10+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.037652s][吞吐率：26.56req/s] [内存消耗：1,762.02kb] [文件加载：53]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:19:15+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/mytask.html?v=4.0
+[ log ] localhost:8080/rcs/public/index.php/admin/index/mytask.html?v=4.0 [运行时间：0.081304s][吞吐率：12.30req/s] [内存消耗：1,792.33kb] [文件加载：55]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'mytask',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.0',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:21:52+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/login
+[ log ] localhost:8080/rcs/public/index.php/admin/login [运行时间：0.067733s][吞吐率：14.76req/s] [内存消耗：2,145.83kb] [文件加载：56]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ G:\EPP4\RCS\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:22:19+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/login/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/login/index.html [运行时间：0.087866s][吞吐率：11.38req/s] [内存消耗：2,857.27kb] [文件加载：60]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/login',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => '*/*',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '30',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'username' => '77777',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ G:\EPP4\RCS\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001295s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.009422s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  `tb_user`.`delete_time` IS NULL  AND ( `username` = '77777' OR `usercode` = '77777' OR `mobile` = '77777' )  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.001242s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.008837s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='18' and AuthGroup.status='1' ) [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.009672s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,17,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000719s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 18 LIMIT 1 [ RunTime:0.000581s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:22:55+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/login
+[ log ] localhost:8080/rcs/public/index.php/admin/login [运行时间：0.035331s][吞吐率：28.30req/s] [内存消耗：2,180.84kb] [文件加载：57]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ G:\EPP4\RCS\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:23:06+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/login/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/login/index.html [运行时间：0.087078s][吞吐率：11.48req/s] [内存消耗：2,857.68kb] [文件加载：60]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/login',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => '*/*',
+  'content-length' => '33',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'nethuige',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ G:\EPP4\RCS\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001482s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.008083s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  `tb_user`.`delete_time` IS NULL  AND ( `username` = 'nethuige' OR `usercode` = 'nethuige' OR `mobile` = 'nethuige' )  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.009858s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.013576s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000404s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:23:06+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.092822s][吞吐率：10.77req/s] [内存消耗：3,016.32kb] [文件加载：66]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000891s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.007836s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000941s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.008284s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.007649s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000832s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.007611s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000565s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:23:06+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.040102s][吞吐率：24.94req/s] [内存消耗：1,761.95kb] [文件加载：53]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T00:23:56+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.148514s][吞吐率：6.73req/s] [内存消耗：3,201.62kb] [文件加载：72]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000994s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.008123s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000717s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.007847s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.006659s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.007295s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000540s ]
+[ error ] [8]未定义数组索引: title[G:\EPP4\RCS\thinkphp\library\think\Collection.php:309]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:24:06+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：0.112583s][吞吐率：8.88req/s] [内存消耗：3,016.78kb] [文件加载：66]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001130s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.008179s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.001057s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.008142s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.009016s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000867s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.009776s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000722s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T00:24:06+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.038690s][吞吐率：25.85req/s] [内存消耗：1,762.04kb] [文件加载：53]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T10:58:35+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/index.html [运行时间：1.065936s][吞吐率：0.94req/s] [内存消耗：3,175.30kb] [文件加载：68]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/login',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003392s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.019776s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.000939s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.012382s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000937s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.011678s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000886s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.014357s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000674s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T10:58:36+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/favicon.ico
+[ log ] localhost:8080/rcs/public/index.php/admin/index/favicon.ico [运行时间：0.162714s][吞吐率：6.15req/s] [内存消耗：1,791.43kb] [文件加载：55]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'favicon.ico',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T10:58:36+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/menu/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/menu/index.html [运行时间：0.095795s][吞吐率：10.44req/s] [内存消耗：1,852.55kb] [文件加载：54]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Menu->index[ G:\EPP4\RCS\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\menu\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T10:58:37+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/menu/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/menu/index.html [运行时间：0.144810s][吞吐率：6.91req/s] [内存消耗：2,742.38kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/menu/index.html',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '117',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '',
+  'scolumnText' => '',
+  'searchText' => '',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 100,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\Menu->index[ G:\EPP4\RCS\application\admin\controller\Menu.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001335s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.014041s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL ORDER BY sort asc LIMIT 0,100 [ RunTime:0.001463s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000614s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T11:14:45+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/
+[ log ] localhost:8080/rcs/public/index.php/admin/index/ [运行时间：0.148804s][吞吐率：6.72req/s] [内存消耗：3,020.60kb] [文件加载：66]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'nethuige',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\index.html [ array (
+  0 => 'userinfo',
+  1 => 'menu',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002348s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_menu` [ RunTime:0.012893s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_menu` WHERE  `tb_menu`.`delete_time` IS NULL  AND `status` = 1  AND `show` = 1 ORDER BY sort asc [ RunTime:0.001040s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_group_access` [ RunTime:0.010278s ]
+[ sql ] [ SQL ] SELECT `AuthGroupAccess`.`uid`,`AuthGroupAccess`.`group_id`,`AuthGroup`.`title`,`AuthGroup`.`rules` FROM `tb_auth_group_access` `AuthGroupAccess` LEFT JOIN `tb_auth_group` `AuthGroup` ON `AuthGroupAccess`.`group_id`=`AuthGroup`.`id` WHERE  ( `AuthGroup`.`delete_time` is null )  AND (  AuthGroupAccess.uid='1' and AuthGroup.status='1' ) [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.015311s ]
+[ sql ] [ SQL ] SELECT `condition`,`name` FROM `tb_auth_rule` WHERE  ( `delete_time` is null )  AND `id` IN (16,6,5,11,13,2,3,1,15,17,14,9,8,7,18)  AND `type` = 1  AND `status` = 1 [ RunTime:0.000813s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.011516s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_user` WHERE  ( `delete_time` is null )  AND `id` = 1 LIMIT 1 [ RunTime:0.000667s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T11:14:45+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/index/home.html
+[ log ] localhost:8080/rcs/public/index.php/admin/index/home.html [运行时间：0.067710s][吞吐率：14.77req/s] [内存消耗：1,892.91kb] [文件加载：55]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ G:\EPP4\RCS\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T11:14:49+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/user/index.html?v=4.0
+[ log ] localhost:8080/rcs/public/index.php/admin/user/index.html?v=4.0 [运行时间：0.408869s][吞吐率：2.45req/s] [内存消耗：1,851.98kb] [文件加载：54]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.0',
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ G:\EPP4\RCS\application\admin\controller\User.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\user\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T11:14:49+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/user/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/user/index.html [运行时间：0.095553s][吞吐率：10.47req/s] [内存消耗：2,749.32kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/user/index.html?v=4.0',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '115',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '',
+  'scolumnText' => '',
+  'searchText' => '',
+  'sortName' => 'id',
+  'sortOrder' => 'desc',
+  'pageSize' => 10,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\User->index[ G:\EPP4\RCS\application\admin\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001452s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_user` [ RunTime:0.012754s ]
+[ sql ] [ SQL ] SELECT `id`,`username`,`usercode`,`comname`,`comcode`,`face`,`mobile`,`tel`,`email`,`status`,`last_login_time`,`last_login_ip`,`create_time`,`update_time`,`delete_time` FROM `tb_user` WHERE  `tb_user`.`delete_time` IS NULL ORDER BY id desc LIMIT 0,10 [ RunTime:0.000869s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_user` WHERE  `tb_user`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000490s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T11:14:54+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/auth_rule/index.html?v=4.0
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/index.html?v=4.0 [运行时间：0.109395s][吞吐率：9.14req/s] [内存消耗：1,865.98kb] [文件加载：54]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/index/',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'v' => '4.0',
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->index[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ VIEW ] G:\EPP4\RCS\public/../application/admin\view\auth_rule\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-03-20T11:14:54+08:00 ] ::1 ::1 POST /rcs/public/index.php/admin/auth_rule/index.html
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/index.html [运行时间：0.085244s][吞吐率：11.73req/s] [内存消耗：2,751.36kb] [文件加载：61]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/auth_rule/index.html?v=4.0',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://localhost:8080',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '117',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'searchModel' => '',
+  'scolumnText' => '',
+  'searchText' => '',
+  'sortName' => 'sort',
+  'sortOrder' => 'asc',
+  'pageSize' => 300,
+  'pageNumber' => 1,
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->index[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000868s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.011690s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL ORDER BY sort asc LIMIT 0,300 [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL LIMIT 1 [ RunTime:0.000322s ]
+
+---------------------------------------------------------------
+[ 2017-03-20T11:14:58+08:00 ] ::1 ::1 GET /rcs/public/index.php/admin/auth_rule/edit.html?id=16
+[ log ] localhost:8080/rcs/public/index.php/admin/auth_rule/edit.html?id=16 [运行时间：0.092644s][吞吐率：10.79req/s] [内存消耗：2,717.33kb] [文件加载：59]
+[ info ] [ LANG ] G:\EPP4\RCS\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth_rule',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; ECS[visit_times]=2; REMEMBERME=VG9weGlhXFNlcnZpY2VcVXNlclxDdXJyZW50VXNlcjpibVYwYUhWcFoyVkFNVFl6TG1OdmJRPT06MTUwODU3MjM1MDo2MDE4ODlkNmEyNDhkZTZmNTVjMmQ5NzFjNDJmZDExZDEyZDZiYjUyMjI0Yzc5NzIzZWE3OTVmMDM2N2ZmYzE2; s_getNewRepeat=1478882195507-New; __clickidc=147888104916879829; bdshare_firstime=1480124331962; forward=http%3A%2F%2Flocalhost%3A8080%2Frcs%2F; PHPSESSID=9mqh6ef62s8kg4loof02scds64; onethink_admin___forward__=%2Fonethink%2Findex.php%3Fs%3D%2Fadmin%2Fmenu%2Findex.html; BJYADMIN=cpm66nj0cml98oidhpppadp6k4; appId=8luwapkvu3xwl; navie742d103=120.92.13.84:80,88; 88=1489507200000; Phpstorm-e8302f1d=696974bc-bf2d-4aba-86a1-dd2a7fd47584',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://localhost:8080/rcs/public/index.php/admin/auth_rule/index.html?v=4.0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'localhost:8080',
+)
+[ info ] [ PARAM ] array (
+  'id' => '16',
+)
+[ info ] [ RUN ] app\admin\controller\AuthRule->edit[ G:\EPP4\RCS\application\admin\controller\AuthRule.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001214s ] mysql:dbname=rcs;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `tb_auth_rule` [ RunTime:0.011608s ]
+[ sql ] [ SQL ] SELECT * FROM `tb_auth_rule` WHERE  `tb_auth_rule`.`delete_time` IS NULL  AND `id` = 16 LIMIT 1 [ RunTime:0.001008s ]
+
+---------------------------------------------------------------

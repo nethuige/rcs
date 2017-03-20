@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜单管理</title>
+    <meta name="keywords" content="菜单管理">
+    <meta name="description" content="菜单管理">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/css/animate.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.min.css?v=4.0.0" rel="stylesheet">
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__//js/bootstrap.min.js?v=3.3.5"></script>
+    <!-- Morris -->
+    <link href="__PUBLIC__/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <!--bootstrap table-->
+    <link href="__PUBLIC__/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <!--重写bt,实现按列搜索，以及搜索模式-->
+    <script src="__PUBLIC__/js/bootstrap-table.js"></script> 
+    <!--<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>-->
+    <script src="__PUBLIC__/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="__PUBLIC__/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!--layer-->
+    <script src="__PUBLIC__/js/plugins/layer/layer.min.js"></script>
+    <!--switchery-->
+    <link href="__PUBLIC__/css/plugins/switchery/switchery.css" rel="stylesheet">
+    <script src="__PUBLIC__/js/plugins/switchery/switchery.js"></script> 
+    <!--toastr-->
+    <link href="__PUBLIC__/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/js/plugins/toastr/toastr.min.js"></script>
+    <!--jstree-->
+    <link href="__PUBLIC__/css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/js/plugins/jsTree/jstree.min.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <style type="text/css">
+        .jstree-node{
+            font-size:14px;
+        }
+        .jstree-open>.jstree-anchor>.fa-folder:before{content:"\f07c"}.jstree-default .jstree-icon.none{width:0}
+    </style>
+    <script>
+    $(function () {
+        Common.InitSwitch('.js-switch');
+       
+    });
+
+   $(document).ready(function() {
+    var data='[{"id":2,"text":"用户信息","parent":1,"icon":null},{"id":3,"text":"用户组","parent":1,"icon":null},{"id":5,"text":"菜单管理","parent":4,"icon":null},{"id":7,"text":"备份数据库","parent":6,"icon":null},{"id":8,"text":"还原数据库","parent":6,"icon":null},{"id":1,"text":"用户管理","parent":0,"icon":"fa fa-user"},{"id":4,"text":"系统管理","parent":0,"icon":"fa fa-desktop"},{"id":6,"text":"数据库管理","parent":0,"icon":"fa fa-database"},{"id":0,"text":"追偿案管理系统","icon":"fa fa-desktop","parent":"#"}]';
+    
+     var jstreeObj = $("#jstree1").jstree({
+         "plugins" : [
+            /*"checkbox",*/
+            "contextmenu",
+            "dnd",/*拖拽*/
+            "massload",/*懒加载*/
+            "search",
+            /*"sort",*/
+            "state",
+            "types",
+            "unique",
+            /*"wholerow",*/
+            "changed",
+            "conditionalselect"
+        ],
+        'core': {
+            "check_callback": true,//在对树进行改变时，check_callback是必须设置为true
+            "themes": {
+                "responsive": false
+            },
+            'expand_selected_onload' : true, //选中项蓝色底显示 
+            'data':{
+                'url': "{:url('menu/getTree')}",  //异步加载jstree html格式的数据地址
+            }
+        },
+        'checkbox' : {  
+            // 禁用级联选中  
+            'three_state' : true,       
+            'cascade' : 'down' //有三个选项，up, down, undetermined; 使用前需要先禁用three_state  
+        },
+        "types": {
+            "default": {
+                "icon": "fa fa-file"
+            }
+        },
+        "contextmenu":{  
+            "items":{  
+                "create":null,
+                "rename":null,  
+                "remove":null,  
+                "ccp":null,  
+                "新建菜单":{  
+                    "label":"新建菜单",  
+                    "action":function(data){
+                        var inst = jQuery.jstree.reference(data.reference),  
+                        obj = inst.get_node(data.reference);
+                            layer.open({
+                              type: 1,
+                              title:'新建'+obj.text+'的子菜单'+obj.id,
+                              skin: 'layui-layer', //加上边框
+                              area: ['350px', '320px'], //宽高
+                              closeBtn:1,
+                              content: $("#create-form"),
+                              btn: ['提交'],
+                              yes: function(index, layero){
+                                    layer.closeAll('page');
+                                    var startdate  = $("#startdate",parent.document).val();
+                                    var enddate = $("#enddate",parent.document).val();
+                                    if(startdate=="" || enddate==""){
+                                        layer.alert("操作失败,未选择日期",{title:'更新提示',icon:'2'});
+                                    }else{
+                                        var params = {startdate:startdate,enddate:enddate,type:'P',method:'PolicyByCar'};
+                                        updateCarPolicy(params);
+                                    }
+                                }
+                            }); 
+                    }
+                },  
+                "删除菜单":{  
+                    "label":"删除菜单",  
+                    "action":function(data){  
+                        var inst = jQuery.jstree.reference(data.reference),  
+                        obj = inst.get_node(data.reference);  
+                        if(confirm("确定要删除此菜单？删除后不可恢复。")){  
+                            jQuery.get("/accountmanage/deleteMenu?id="+obj.id,function(dat){  
+                                if(dat == 1){  
+                                    alert("删除菜单成功！");  
+                                    jQuery("#"+treeid).jstree("refresh");  
+                                }else{  
+                                    alert("删除菜单失败！");  
+                                }  
+                            });  
+                        }  
+                    }  
+                },  
+                "编辑菜单":{  
+                    "label":"编辑菜单",  
+                    "action":function(data){  
+                        var inst = jQuery.jstree.reference(data.reference),  
+                        obj = inst.get_node(data.reference);  
+                        dialog.show({"title":"编辑“"+obj.text+"”菜单",url:"/accountmanage/editMenu?id="+obj.id,height:280,width:400});  
+                    }  
+                }  
+            }  
+          }
+    });
+     // 绑定load时间，初始化数据显示  
+    jstreeObj.on("loaded.jstree", function(e, data) {  
+        jstreeObj.jstree("open_all");  //展开全部  
+    });  
+});
+</script>
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <!--面板-->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>菜单管理 <small class="m-l-sm">菜单信息</small></h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <!--数据-->
+                        <div id="jstree1">
+                           
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--新建菜单-->
+<div id="create-form" style="display: none;">
+    <div style="width:280px;margin:15px auto;">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="startdate" class="col-sm-4 control-label">菜单名称：</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" name="title" id="title" placeholder="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="enddate" class="col-sm-4 control-label">菜单地址：</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" name="url" id="url" placeholder="填写url,如:user/index">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="enddate" class="col-sm-4 control-label">菜单图标：</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" name="icon" id="icon" placeholder="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="enddate" class="col-sm-4 control-label">菜单排序：</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" name="sort" id="sort" placeholder="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="enddate" class="col-sm-4 control-label">是否显示：</label>
+                <div class="col-sm-8">
+                  <input type="checkbox" id="status" name="status" class="js-switch" checked />
+                </div>
+            </div> 
+        </form>
+    </div>
+</div>
+<script src="__PUBLIC__/js/content.min.js?v=1.0.0"></script>
+</body>
+</html>
