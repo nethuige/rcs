@@ -46,21 +46,12 @@ class Database extends Base
      */
     public function optimize(Request $request){
         $tables = $request->param("tables"); //表名
-        if(mb_strpos($tables,",")!==false){
-            $list = Db::query("OPTIMIZE TABLE `{$tables}`");
-            if($list){
-                $tables = str_replace(",","<br/>",$tables);
-                return ['status'=>true,'msg'=>"'{$tables}'<br/>优化完成！"];
-            } else {
-                return ['status'=>false,'msg'=>'数据表优化出错请重试'];
-            }
+        $list = Db::query("OPTIMIZE TABLE `{$tables}`");
+        if($list){
+            $tables = str_replace(",","<br/>",$tables);
+            return ['status'=>true,'msg'=>"'{$tables}'<br/>优化完成！"];
         } else {
-            $list = Db::query("OPTIMIZE TABLE `{$tables}`");
-            if($list){
-                return ['status'=>true,'msg'=>"'{$tables}'<br/>优化完成！"];
-            } else {
-                return ['status'=>false,'msg'=>'数据表优化出错请重试'];
-            }
+            return ['status'=>false,'msg'=>'数据表优化出错请重试'];
         }
     }
 
