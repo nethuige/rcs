@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="phpstudy">
+  <component name="PublishConfigData" autoUpload="Always" serverName="phpstudy">
     <serverData>
       <paths name="phpstudy">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="rcs" local="$PROJECT_DIR$" web="/rcs" />
           </mappings>
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

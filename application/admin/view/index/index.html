@@ -31,13 +31,17 @@
                                        src="__UPLOAD__/{$userinfo['face']}"/></span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
-                               <span class="block m-t-xs"><strong class="font-bold">nethuige</strong></span>
+                               <span class="block m-t-xs"><strong class="font-bold">{$userinfo['username']}</strong></span>
                                 <span class="text-muted text-xs block">{$userinfo['group']['title']}<b
                                         class="caret"></b></span>
                                 </span>
                             </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                 <li><a class="J_menuItem" href="contacts.html">修改密码</a>
+                                <li><a class="J_menuItem" onclick="javascript:$('.dropdown-menu').dropdown('toggle')"; href="{:url('index/myinfo')}">更换头像</a>
+                                </li>
+                                <li><a class="J_menuItem" onclick="javascript:$('.dropdown-menu').dropdown('toggle')"; href="{:url('index/myinfo')}">个人信息</a>
+                                </li>
+                                <li><a class="J_menuItem" href="contacts.html">修改密码</a>
                                 </li>
                                 <li class="divider"></li>
                                 <li><a href="login.html">安全退出</a>
@@ -47,50 +51,6 @@
                         <div class="logo-element">PICC
                         </div>
                     </li>
-                    <li>
-                        <a class="J_menuItem" href="mytask.html">
-                            <i class="fa fa-list"></i>
-                            <span class="nav-label">我的待办任务</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-flag"></i> <span class="nav-label">理赔阶段追偿</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="createOrder.html">案件维护</a>
-                            </li>
-                            <li><a class="J_menuItem" href="declareOrder.html">案件查询</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-magic"></i> <span class="nav-label">赔付后追偿管理</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li> <a href="#"> <span class="nav-label">赔付后追偿管理</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="createOrder.html">案件维护</a>
-                            </li>
-                            <li><a class="J_menuItem" href="declareOrder.html">案件查询</a>
-                            </li>
-                        </ul>
-                            </li>
-                            <li><a class="J_menuItem" href="declareOrder.html">案件查询</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-columns"></i> <span class="nav-label">查询统计</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a class="J_menuItem" href="createOrder.html">交强险追偿案件统计表</a>
-                            </li>
-                            <li><a class="J_menuItem" href="declareOrder.html">商业车险追偿案件统计表</a>
-                            </li>
-                             <li><a class="J_menuItem" href="declareOrder.html">货运险追偿案件统计表</a>
-                            </li>
-                             <li><a class="J_menuItem" href="declareOrder.html">非车险（非货运）追偿案件统计表</a>
-                            </li>
-                        </ul>
-                    </li>
-
                     {$menu}
                 </ul>
             </div>
