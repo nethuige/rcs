@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户组管理</title>
+    <meta name="keywords" content="用户组管理">
+    <meta name="description" content="用户组管理">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/css/animate.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.min.css?v=4.0.0" rel="stylesheet">
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__//js/bootstrap.min.js?v=3.3.5"></script>
+    <!-- Morris -->
+    <link href="__PUBLIC__/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <!--bootstrap table-->
+    <link href="__PUBLIC__/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <!--重写bt,实现按列搜索，以及搜索模式-->
+    <script src="__PUBLIC__/js/bootstrap-table.js"></script>
+    <!--<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>-->
+    <script src="__PUBLIC__/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="__PUBLIC__/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!--layer-->
+    <script src="__PUBLIC__/js/plugins/layer/layer.min.js"></script>
+    <!--select2-->
+    <link href="__PUBLIC__/css/plugins/select2/select2.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/js/plugins/select2/select2.full.min.js"></script>
+    <script src="__PUBLIC__/js/plugins/select2/i18n/zh-CN.js"></script>
+    <!--switchery-->
+    <link href="__PUBLIC__/css/plugins/switchery/switchery.css" rel="stylesheet">
+    <script src="__PUBLIC__/js/plugins/switchery/switchery.js"></script>
+    <!--toastr-->
+    <link href="__PUBLIC__/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/js/plugins/toastr/toastr.min.js"></script>
+    <!--common-->
+    <script src="__PUBLIC__/js/common.js"></script>
+    <style type="text/css">
+    </style>
+    <script>
+        var $table;
+        $(function () {
+            initTable();
+            //优化表
+            $("body").on("click",".optimize-btn",function () {
+                var rows = $table.bootstrapTable('getSelections');
+                var tables = $(this).data("name");
+                if (rows.length == 0 && tables==undefined) {
+                    toastr.warning("请选择要操作的行","系统提示");
+                    return false;
+                } else if(rows.length != 0 && tables==undefined){
+                    var tables = [];
+                    for (var i in rows) {
+                        tables.push(rows[i].name);
+                    }
+                    tables = tables.join(',');
+                }
+                var params = {tables: tables};
+                $.post("{:url('database/optimize')}",params,function(data){
+                    if(data.status){
+                        toastr.success(data.msg,"系统提示");
+                        $table.bootstrapTable('refresh', { silent: true });
+                    }else{
+                        toastr.error(data.msg,"系统提示");
+                    }
+                });
+            })
+        });
+        //初始化表格
+        function initTable(setParams) {
+            $table = $('#result-table');
+            $table.bootstrapTable('destroy'); //销毁旧表格
+            $table.bootstrapTable({
+                url: "{:url('database/backup')}",
+                method: 'post',
+                toolbar: '#toolbar',    //工具按钮用哪个容器
+                iconSize: "outline",
+                striped: false,      //是否显示行间隔色
+                cache: false,      //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+                pagination: true,     //是否显示分页（*）
+                sidePagination: "server",   //分页方式：client客户端分页，server服务端分页（*）
+                pageNumber: 1,  //初始化加载第一页，默认第一页
+                pageSize: 100,      //每页的记录行数（*）
+                pageList: [100, 300, 500, 1000],  //可供选择的每页的行数（*）
+                sortable: true, //启用排序
+                sortName: "name", //初始排序列名
+                sortOrder: "desc",     //初始排序方式
+                queryParamsType: 'search', //默认值为 'limit' ,在默认情况下 传给服务端的参数为：offset,limit,sort
+                // 设置为 ''  在这种情况下传给服务器的参数为：pageSize,pageNumber
+                //自定义传参
+                queryParams:function(params){
+                    if(setParams==undefined) return params;
+                    return setParams(params);
+                },
+                /*queryParams: function (params) {
+                 return {
+                 pageSize: params.pageSize,
+                 pageNumber: params.pageNumber,
+                 sortOrder: params.sortOrder,
+                 sortName: params.sortName,
+                 searchText: params.searchText,
+                 scolumnText:params.scolumnText,
+                 searchModel:params.searchModel,
+                 };
+                 },*///前端调用服务时，会默认传递上边提到的参数，如果需要添加自定义参数，可以自定义一个函数返回请求参数
+                search: false,      //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+                strictSearch: true, //严格搜索模式
+                searchOnEnterKey: true, //将执行的搜索方法,直到回车键被按下。
+                showRefresh: true,     //是否显示刷新按钮
+                showColumns: true,     //是否显自定义显示列
+                minimumCountColumns: 2,    //最少允许的列数
+                clickToSelect: false,    //是否启用点击选中行
+                showToggle: true, //是否显示切换表格显示按钮
+                showExport: true, //是否显示导出数据显示按钮
+                detailView: false, //是否启用显示详细视图
+                detailFormatter: function (index, row) {
+                    var html = [];
+                    var columnsObj = this.columns[0];
+                    console.log(row);
+                    $.each(row, function (key, value) {
+                        if (value != undefined) {
+                            var lablel = "";
+                            for (var i in columnsObj) {
+                                if (key == columnsObj[i].field) {
+                                    lablel = columnsObj[i].title; //显示中文标签
+                                    break;
+                                }
+                            }
+                            html.push('<p><b>' + lablel + ':</b> ' + value + '</p>');
+                        }
+                    });
+                    return html.join('');
+                },
+                idField: 'name',
+                columns: [{
+                    checkbox: true,
+                }, {
+                    field: 'name',
+                    title: '表名',
+                    align: 'center',
+                }, {
+                    field: 'engine',
+                    title: '表类型',
+                    align: 'center',
+                }, {
+                    field: 'rows',
+                    title: '记录数',
+                    align: 'center',
+                }, {
+                    field: 'data_length',
+                    title: '数据大小',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        return Common.FormatBytes(value);
+                    }
+                }, {
+                    field: 'index_length',
+                    title: '索引大小',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        return Common.FormatBytes(value);
+                    }
+                }, {
+                    field: 'data_free',
+                    title: '碎片大小',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        return Common.FormatBytes(value);
+                    }
+                }, {
+                    field: 'comment',
+                    title: '注释',
+                    align: 'center',
+                }, {
+                    field: 'create_time',
+                    title: '创建时间',
+                    align: 'center',
+                    visible:false,
+                }, {
+                    field: 'update_time',
+                    title: '更新时间',
+                    align: 'center',
+                    visible:false,
+                }, {
+                    field: '',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        return '<div class="btn-group"><a href="javascript:void(0);" data-name="'+row.name+'" class="btn btn-outline btn-xs btn-default optimize-btn"><i class="fa fa-recycle"></i> 优化</a> <a href="javascript:void(0);" class="btn btn-outline btn-xs btn-default del-btn" data-id="'+row.id+'"><i class="fa fa-cogs"></i> 修复</a></div>';
+                    }
+                }
+                ],
+                formatSearch: function () {
+                    return "快速搜索";
+                },
+            });
+        }
+
+    </script>
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <!--面板-->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>备份数据库 <small class="m-l-sm">数据库表</small></h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <!--数据-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="toolbar">
+                                <a class="btn btn-primary backup-btn" href="javascript:void(0);"><i class="fa fa-cloud-upload"></i> 备份</a>
+                                <a class="btn btn-warning optimize-btn"  href="javascript:void(0)"><i class="fa fa-recycle"></i> 优化</a>
+                                <a class="btn btn-danger" id="repair-btn" href="javascript:void(0)"><i class="fa fa-cogs"></i> 修复</a>
+                            </div>
+                            <table id="result-table"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/js/content.min.js?v=1.0.0"></script>
+</body>
+</html>
