@@ -16,6 +16,47 @@
     <link href="__PUBLIC__/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
     <link href="__PUBLIC__/css/animate.min.css" rel="stylesheet">
     <link href="__PUBLIC__/css/style.min.css?v=4.0.0" rel="stylesheet">
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="__PUBLIC__/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="__PUBLIC__/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="__PUBLIC__/js/hplus.min.js?v=4.0.0"></script>
+    <script src="__PUBLIC__/js/contabs.min.js"></script>
+    <script src="__PUBLIC__/js/plugins/pace/pace.min.js"></script>
+    <!--layer-->
+    <script src="__PUBLIC__/js/plugins/layer/layer.min.js"></script>
+    <script>
+        $(function () {
+            //修改密码
+            $(".modify-pwd-btn").on("click",function () {
+                var layerIndex = layer.open({
+                    type: 1,
+                    title:'修改密码',
+                    skin: 'layui-layer', //加上边框
+                    area: ['400px'], //宽,高自适应
+                    maxmin: true,
+                    closeBtn:1,
+                    content: $("#modify-pwd-form"),
+                    btn: ['确认修改','取消修改'],
+                    yes: function(index, layero){
+                        if($("#form1 #old_password").val()==""||$("#form1 #new_password").val()==""){
+                            toastr.warning("请填写完整信息","系统提示");
+                            return false;
+                        }
+                        var params = $("#modify-pwd-form").serializeObject();
+                        $.post("{:url('user/modifyPwd')}",params,function(data){
+                            if(data.status){
+                                layer.close(layerIndex);
+                                toastr.success(data.msg,"系统提示");
+                            }else{
+                                toastr.error(data.msg,"系统提示");
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
     <div id="wrapper">
@@ -39,9 +80,9 @@
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a class="J_menuItem" onclick="javascript:$('.dropdown-menu').dropdown('toggle')"; href="{:url('index/myinfo')}">更换头像</a>
                                 </li>
-                                <li><a class="J_menuItem" onclick="javascript:$('.dropdown-menu').dropdown('toggle')"; href="{:url('index/myinfo')}">个人信息</a>
+                                <li><a class="J_menuItem" onclick="javascript:$('.dropdown-menu').dropdown('toggle')"; href="{:url('user/myinfo')}">个人信息</a>
                                 </li>
-                                <li><a class="J_menuItem" href="contacts.html">修改密码</a>
+                                <li><a class="modify-pwd-btn" href="javascript:void(0);">修改密码</a>
                                 </li>
                                 <li class="divider"></li>
                                 <li><a href="login.html">安全退出</a>
@@ -113,13 +154,24 @@
         </div>
         <!--右侧边栏结束-->
     </div>
-    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
-    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="__PUBLIC__/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="__PUBLIC__/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="__PUBLIC__/js/plugins/layer/layer.min.js"></script>
-    <script src="__PUBLIC__/js/hplus.min.js?v=4.0.0"></script>
-    <script src="__PUBLIC__/js/contabs.min.js"></script>
-    <script src="__PUBLIC__/js/plugins/pace/pace.min.js"></script>
+    <!--修改密码-->
+    <div id="modify-pwd-form" style="display: none;">
+        <div style="width:300px;margin:15px auto;">
+            <form class="form-horizontal" id="form1">
+                <div class="form-group">
+                    <label for="old_password" class="col-sm-4 control-label">旧密码：</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" name="old_password" id="old_password" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="new_password" class="col-sm-4 control-label">新密码：</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" name="new_password" id="new_password" placeholder="尽量不要太简单">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

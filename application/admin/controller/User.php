@@ -15,7 +15,7 @@ use \think\Session;
 use \think\Loader;
 use \think\Config;
 use \think\Cache;
-use think\auth\Auth;
+use \think\auth\Auth;
 use app\admin\model\User as UserModel;
 /**
 * 用户控制器
@@ -115,6 +115,32 @@ class User extends Base
 		}
 		return $res;
    	}
+    /**
+     * 个人信息
+     */
+    public function myinfo()
+    {
+        $user = Session::get("user");
+        $userinfo["username"] = $user['username'];
+        $userinfo["face"] = $user['face'];
+        $userinfo["group"] = $user['groups'][0];
+        $userinfo["comname"] = $user['comname'];
+        $userinfo["mobile"] = $user['mobile'];
+        $userinfo["tel"] = $user['tel'];
+        $userinfo["email"] = $user['email'];
+        $userinfo["last_login_time"] = $user['last_login_time'];
+        $userinfo["last_login_ip"] = $user['last_login_ip'];
+        $this->assign("userinfo", $userinfo);
+        return $this->fetch();
+    }
+
+    /**
+     * 修改密码
+     * @param Request $request
+     */
+    public function modifyPwd(Request $request){
+
+    }
    	/*
 	* 真实删除
    	*/

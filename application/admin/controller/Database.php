@@ -19,7 +19,7 @@ use \think\auth\Auth;
 use app\admin\model\Database as DatabaseModel;
 
 /**
- * 数据库控制器
+ * 数据库备份还原控制器
  * @author nethuige<511205380@qq.com>
  * @version v1.0
  */
