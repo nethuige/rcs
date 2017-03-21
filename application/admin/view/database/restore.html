@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>用户组管理</title>
-    <meta name="keywords" content="用户组管理">
-    <meta name="description" content="用户组管理">
+    <title>还原数据库</title>
+    <meta name="keywords" content="还原数据库">
+    <meta name="description" content="还原数据库">
     <link rel="shortcut icon" href="favicon.ico">
     <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
     <link href="__PUBLIC__/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
@@ -44,63 +44,57 @@
             initTable();
             //还原
             $("body").on("click", ".restore-btn", function () {
-                var rows = $table.bootstrapTable('getSelections');
-                var tables = $(this).data("name");
-                if (rows.length == 0 && tables == undefined) {
-                    toastr.warning("请选择要操作的行", "系统提示");
-                    return false;
-                } else if (rows.length != 0 && tables == undefined) {
-                    var tables = [];
-                    for (var i in rows) {
-                        tables.push(rows[i].name);
-                    }
-                    tables = tables.join(',');
-                }
-                var params = {tables: tables};
-                $.post("{:url('database/optimize')}", params, function (data) {
-                    if (data.status) {
-                        toastr.success(data.msg, "系统提示");
-                        $table.bootstrapTable('refresh', {silent: true});
-                    } else {
-                        toastr.error(data.msg, "系统提示");
-                    }
+                var that = $(this);
+                var index = layer.confirm('确定要还原吗？', {
+                    title:'系统提示',
+                    btn: ['确定','取消']
+                }, function(){
+                    layer.close(index);
+                    var name = that.data("name");
+                    var params = {name: name};
+                    $.post("{:url('database/restoreStart')}", params, function (data) {
+                        if (data.status) {
+                            toastr.success(data.msg, "系统提示");
+                            if(data.data!=undefined){
+                                restore(data.data.part,data.data.start); //继续备份下一张
+                            }
+                        } else {
+                            toastr.error(data.msg, "系统提示");
+                        }
+                    });
                 });
             });
             //删除
             $("body").on("click", ".del-btn", function () {
-                var rows = $table.bootstrapTable('getSelections');
-                var tables = $(this).data("name");
-                if (rows.length == 0 && tables == undefined) {
-                    toastr.warning("请选择要操作的行", "系统提示");
-                    return false;
-                } else if (rows.length != 0 && tables == undefined) {
-                    var tables = [];
-                    for (var i in rows) {
-                        tables.push(rows[i].name);
-                    }
-                    tables = tables.join(',');
-                }
-                var params = {tables: tables};
-                $.post("{:url('database/repair')}", params, function (data) {
-                    if (data.status) {
-                        toastr.success(data.msg, "系统提示");
-                        $table.bootstrapTable('refresh', {silent: true});
-                    } else {
-                        toastr.error(data.msg, "系统提示");
-                    }
+                var that = $(this);
+                var index = layer.confirm('确定要删除吗？', {
+                    title:'系统提示',
+                    btn: ['确定','取消']
+                }, function(){
+                    layer.close(index);
+                    var name = that.data("name");
+                    var params = {name: name};
+                    $.post("{:url('database/delBackup')}", params, function (data) {
+                        if (data.status) {
+                            toastr.success(data.msg, "系统提示");
+                            $table.bootstrapTable('refresh', {silent: true});
+                        } else {
+                            toastr.error(data.msg, "系统提示");
+                        }
+                    });
                 });
             });
 
         });
-        //数据库备份
-        function backup(id,start){
-            var params = {id:id,start:start}
-            $.post("{:url('database/backupStart')}", params, function (data) {
+        //数据库还原
+        function restore(part,start){
+            var params = {part:part,start:start}
+            $.post("{:url('database/restoreStart')}", params, function (data) {
                 if (data.status) {
                     toastr.success(data.msg, "系统提示");
                     if(data.data!=undefined){
                         setTimeout(function(){
-                            backup(data.data.id,data.data.start);
+                            restore(data.data.part,data.data.start);
                         },800);
                     }
                 } else {
@@ -204,7 +198,7 @@
                     title: '操作',
                     align: 'center',
                     formatter: function (value, row, index) {
-                        return '<div class="btn-group"><a href="javascript:void(0);" data-name="' + row.name + '" class="btn btn-outline btn-xs btn-default optimize-btn"><i class="fa fa-retweet"></i> 还原</a> <a href="javascript:void(0);" data-name="' + row.name + '" class="btn btn-outline btn-xs btn-default del-btn" data-id="' + row.id + '"><i class="fa fa-times"></i> 删除</a></div>';
+                        return '<div class="btn-group"><a href="javascript:void(0);" data-name="' + row.name + '" class="btn btn-outline btn-xs btn-default restore-btn"><i class="fa fa-retweet"></i> 还原</a> <a href="javascript:void(0);" data-name="' + row.name + '" class="btn btn-outline btn-xs btn-default del-btn" data-id="' + row.id + '"><i class="fa fa-times"></i> 删除</a></div>';
                     }
                 }
                 ],
@@ -240,7 +234,6 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div id="toolbar">
-                                <a class="btn btn-danger" id="del-btn" href="javascript:void(0)"><i class="fa fa-times"></i> 批量删除</a>
                             </div>
                             <table id="result-table"></table>
                         </div>

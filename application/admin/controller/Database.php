@@ -157,6 +157,64 @@ class Database extends Base
     }
 
     /**
+     * 数据库还原操作
+     * @param Request $request
+     */
+    public function restoreStart(Request $request){
+        $name = $request->param('name');
+        $part = $request->param('part');
+        $start = $request->param('start');
+        if($name!=""){ //初始化
+            //获取备份文件信息
+            $name  = $name . '-*.sql*';
+            $config = Config::get('database_backup');
+            $path = $config['path'].$name;
+            $files = glob($path);
+            $list  = array();
+            foreach($files as $filename){
+                $basename = basename($filename);
+                $match    = sscanf($basename, '%4s%2s%2s-%2s%2s%2s-%d');
+                $gz       = preg_match('/^\d{8,8}-\d{6,6}-\d+\.sql.gz$/', $basename);
+                $list[$match[6]] = array($match[6], $filename, $gz);
+            }
+            ksort($list);
+            //检测文件正确性
+            $last = end($list);
+            if(count($list) === $last[0]){
+                Session::set('backup_list', $list); //缓存备份列表
+                return ["msg"=>"初始化完成","status"=>true,"data"=>['part'=>1,'start'=>0]];
+            } else {
+                return ["msg"=>"备份文件可能已经损坏，请检查！","status"=>false];
+            }
+        } elseif(is_numeric($part) && is_numeric($start)) {
+            $config = Config::get('database_backup');
+            $path = $config['path'].$name;
+            $list  = Session::get('backup_list');
+            $db = new DatabaseModel($list[$part],[
+                'path'     => $path,
+                'compress' => $list[$part][2]]);
+            $start = $db->import($start);
+            if(false === $start){
+                return ["msg"=>"还原数据出错，请检查！","status"=>false];
+            } elseif(0 === $start) { //下一卷
+                if(isset($list[++$part])){
+                    return ["msg"=>"正在还原...#{$part}","status"=>true,"data"=>['part' => $part, 'start' => 0]];
+                } else {
+                    Session::set('backup_list', null);
+                    return ["msg"=>"全部还原完成","status"=>true];
+                }
+            } else {
+                if($start[1]){
+                    $rate = floor(100 * ($start[0] / $start[1]));
+                    return ["msg"=>"正在还原...#{$part} ({$rate}%)","status"=>true,"data"=>['part' => $part, 'start' => $start[0]]];
+                } else {
+                    return ["msg"=>"正在还原...#{$part}","status"=>true,"data"=>['part' => $part,'gz'=>1, 'start' => $start[0]]];
+                }
+            }
+        }
+    }
+
+    /**
      * 数据库表优化
      * @param Request $request
      * @return array
@@ -187,6 +245,28 @@ class Database extends Base
             return ['status' => true, 'msg' => "'{$tables}'<br/>修复完成！"];
         } else {
             return ['status' => false, 'msg' => '数据表修复出错请重试'];
+        }
+    }
+
+    /**
+     * 删除备份
+     * @param Request $request
+     * @return array
+     */
+    public function delBackup(Request $request){
+        $name = $request->param("name");
+        if($name){
+            $name  = $name . '-*.sql*';
+            $config = Config::get('database_backup');
+            $path = $config['path'].$name;
+            array_map("unlink", glob($path));
+            if(count(glob($path))){
+                return ['status' => false, 'msg' => '删除失败，请检查权限！'];
+            } else {
+                return ['status' => true, 'msg' => '删除成功'];
+            }
+        } else {
+            return ['status' => false, 'msg' => '删除失败'];
         }
     }
 

@@ -147,7 +147,8 @@ class Database
             //备份数据记录
             $result = Db::query("SELECT * FROM `{$table}` LIMIT {$start}, 1000");
             foreach ($result as $row) {
-                //$row = array_map('mysql_real_escape_string', $row);
+                //$row = array_map('mysqli_real_escape_string', $row);
+                $row = array_map('addslashes', $row);
                 $sql = "INSERT INTO `{$table}` VALUES ('" . implode("', '", $row) . "');\n";
                 if(false === $this->write($sql)){
                     return false;
