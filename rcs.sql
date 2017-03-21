@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-03-20 23:17:40
+Date: 2017-03-21 22:27:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -753,19 +753,19 @@ INSERT INTO `tb_company` VALUES ('629', '35052212', '台商投资区营业部营
 DROP TABLE IF EXISTS `tb_menu`;
 CREATE TABLE `tb_menu` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '菜单名称',
+  `title` varchar(50) NOT NULL DEFAULT '' COMMENT '菜单名称',
   `pid` int(10) NOT NULL DEFAULT '0' COMMENT '上级菜单ID',
-  `icon` char(20) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '菜单图标',
+  `icon` char(20) NOT NULL DEFAULT '' COMMENT '菜单图标',
   `sort` int(10) NOT NULL DEFAULT '0' COMMENT '排序（同级有效）',
-  `url` char(255) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '菜单url 控制器/方法',
+  `url` char(255) NOT NULL DEFAULT '' COMMENT '菜单url 控制器/方法',
   `show` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否显示',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '菜单状态 1启用 0禁用',
-  `remark` char(255) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT '备注',
+  `remark` char(255) NOT NULL DEFAULT '' COMMENT '备注',
   `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
   `update_time` int(10) unsigned NOT NULL DEFAULT '0',
   `delete_time` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_menu
@@ -789,23 +789,23 @@ INSERT INTO `tb_menu` VALUES ('27', '系统主页', '0', 'fa fa-home', '1', 'adm
 DROP TABLE IF EXISTS `tb_user`;
 CREATE TABLE `tb_user` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `usercode` varchar(20) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `password` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `comname` varchar(30) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `comcode` varchar(20) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `face` varchar(100) NOT NULL DEFAULT '',
-  `mobile` char(11) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `tel` char(20) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `email` varchar(30) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `username` varchar(20) NOT NULL DEFAULT '',
+  `usercode` varchar(20) NOT NULL DEFAULT '',
+  `password` varchar(50) NOT NULL DEFAULT '',
+  `comname` varchar(30) NOT NULL DEFAULT '',
+  `comcode` varchar(20) NOT NULL DEFAULT '',
+  `face` varchar(100) CHARACTER SET gbk NOT NULL DEFAULT '',
+  `mobile` char(11) NOT NULL DEFAULT '',
+  `tel` char(20) NOT NULL DEFAULT '',
+  `email` varchar(30) NOT NULL DEFAULT '',
   `status` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `last_login_time` int(10) unsigned NOT NULL DEFAULT '0',
-  `last_login_ip` varchar(20) NOT NULL DEFAULT '',
+  `last_login_ip` varchar(20) CHARACTER SET gbk NOT NULL DEFAULT '',
   `create_time` int(10) unsigned NOT NULL DEFAULT '0',
   `update_time` int(10) unsigned NOT NULL DEFAULT '0',
   `delete_time` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=gbk;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_user

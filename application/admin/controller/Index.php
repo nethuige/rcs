@@ -30,7 +30,6 @@ class Index extends Base
      */
     public function index()
     {
-
         $user = Session::get("user");
         $userinfo["username"] = $user['username'];
         $userinfo["face"] = $user['face'];
