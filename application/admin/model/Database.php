@@ -148,8 +148,13 @@ class Database
             $result = Db::query("SELECT * FROM `{$table}` LIMIT {$start}, 1000");
             foreach ($result as $row) {
                 //$row = array_map('mysqli_real_escape_string', $row);
-                $row = array_map('addslashes', $row);
-                $sql = "INSERT INTO `{$table}` VALUES ('" . implode("', '", $row) . "');\n";
+                //$row = array_map('addslashes', $row);//解决多个引号等特殊符号不转义问题
+                //$sql = "INSERT INTO `{$table}` VALUES ('" . implode("', '", $row) . "');\n";
+                //解决null值变成空字符串问题,解决多个引号等特殊符号不转义问题
+                $row = array_map(function($v){
+                    return is_null($v)?"nethuige_null":addslashes($v);
+                }, $row);
+                $sql = str_replace("'nethuige_null'","null","INSERT INTO `{$table}` VALUES ('" . implode("', '", $row) . "');\n");
                 if(false === $this->write($sql)){
                     return false;
                 }
