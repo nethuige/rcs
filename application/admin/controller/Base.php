@@ -14,6 +14,7 @@ use \think\Session;
 use \think\View;
 use \think\Config;
 use \think\Request;
+use \think\Hook;
 use \think\auth\Auth;
 
 
@@ -24,13 +25,24 @@ use \think\auth\Auth;
 */
 class Base extends controller
 {
+    public $userinfo;
 
 	/**
 	* 构造函数
 	*/
     public function _initialize(){
+        //控制器构造执行顺序大于action_begin标签位，在控制器Hook::listen会早于Hook::add
+        //由于action_begin标签位无法满足需求，此处创建一个[控制器构造的]行为标签位
+        //1.vendor目录下addons插件先Hook::add绑定到base_ctrl_init标签位
+        //2.控制器构造函数在创建标签位base_ctrl_init
+        Hook::listen('base_ctrl_init');
+
+        //钩子挂载
+        $this->userinfo = Session::get("userinfo");
+        $request = Request::instance();
+        hook("baseCtrlHook",['request'=>$request,'userinfo'=>$this->userinfo]);
+
     	//Session::clear();
-    
  		/*$request = Request::instance();
     	print_r($request->module()."<br/>".HumpToUnderLine($request->controller())."<br/>".$request->action()."<br/>");
     	$auth = new Auth();

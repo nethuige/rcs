@@ -33,7 +33,8 @@
         "topthink/think-worker": "^1.0",
         "topthink/think-queue": "^1.0",
         "topthink/think-testing": "^1.0",
-        "5ini99/think-auth": "dev-master"
+        "5ini99/think-auth": "dev-master",
+        "5ini99/think-addons": "2.0.0"
     },
     "extra": {
         "think-path": "thinkphp"

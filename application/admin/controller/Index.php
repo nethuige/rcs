@@ -7,16 +7,15 @@
 // | Author: nethuige <511205380@qq.com>
 // +----------------------------------------------------------------------
 namespace app\admin\controller;
-use \think\Controller;
 use \think\Db;
 use \think\View;
 use \think\Request;
 use \think\Session;
-use \think\Loader;
 use \think\Config;
 use \think\Cache;
 use \think\auth\Auth;
 use app\admin\model\Menu as MenuModel;
+
 /**
 * 首页控制器
 * @author nethuige<511205380@qq.com>
@@ -24,21 +23,19 @@ use app\admin\model\Menu as MenuModel;
 */
 class Index extends Base
 {
+
     /**
      * 后台框架页面
      * @return mixed
      */
-    public function index()
+    public function index(Request $request)
     {
-        $user = Session::get("user");
-        $userinfo["username"] = $user['username'];
-        $userinfo["face"] = $user['face'];
-        $userinfo["group"] = $user['groups'][0];
-        $menu = $this->getUserMenu($user['id']);
-        $this->assign("userinfo", $userinfo);
+        $menu = $this->getUserMenu($this->userinfo['id']);
+        $this->assign("userinfo", $this->userinfo);
         $this->assign("menu", $menu);
         return $this->fetch();
     }
+
 
     /**
      * 系统主页

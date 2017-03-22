@@ -61,9 +61,9 @@ class AuthGroup extends Base
    	public function create(Request $request)
     {
 		if($request->isPost()){
-			$AuthGroupModel = new AuthGroupModel($_POST);
-			$AuthGroupModel->allowField(true)->save();
-			$id = $AuthGroupModel->id;
+			$authGroupModel = new AuthGroupModel($_POST);
+			$authGroupModel->allowField(true)->save();
+			$id = $authGroupModel->id;
 			if($id){
 				$res = ["data"=>$id,"status"=>true,"msg"=>"添加成功"];
 			}else{
@@ -78,12 +78,12 @@ class AuthGroup extends Base
    	public function edit(Request $request){
 		if ($request->isGet()){
 			$id = $request->param('id');
-			$AuthGroupModel = AuthGroupModel::get($id);
-			return $AuthGroupModel;
+			$authGroupModel = AuthGroupModel::get($id);
+			return $authGroupModel;
 		}else if($request->isPost()){
 			$id = $request->param('id');
-			$AuthGroupModel = new AuthGroupModel();
-			$effect = $AuthGroupModel->allowField(true)->save($_POST,['id' => $id]);
+			$authGroupModel = new AuthGroupModel();
+			$effect = $authGroupModel->allowField(true)->save($_POST,['id' => $id]);
 			if($effect){
 				$res['status'] = true;
 				$res['msg'] = "保存成功";

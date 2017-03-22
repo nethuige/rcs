@@ -12,10 +12,10 @@ use traits\model\SoftDelete;
 class User extends Model
 {
 	use SoftDelete;
-	
+	//模型架构分为三层：逻辑层(处理业务逻辑)/服务层(提供服务)/事件层(数据赋值,数据获取等事件)
 	//如果是直接赋值可以不需要数据完成，修改器就能生效
 	//如果是$userModel = new UserModel($_POST);
-	//这种通过外部提交赋值给模型的需要设置数据完成修改器才会生效
+	//这种通过外部提交赋值给模型的需要设置[数据完成]修改器才会生效
 	protected $auto = ['face','password'];
 
 	//状态获取器

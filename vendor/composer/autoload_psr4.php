@@ -16,7 +16,7 @@ return array(
     'think\\captcha\\' => array($vendorDir . '/topthink/think-captcha/src'),
     'think\\auth\\' => array($vendorDir . '/5ini99/think-auth/src'),
     'think\\angular\\' => array($vendorDir . '/topthink/think-angular/src'),
-    'think\\' => array($baseDir . '/thinkphp/library/think', $vendorDir . '/topthink/think-image/src', $vendorDir . '/topthink/think-queue/src'),
+    'think\\' => array($baseDir . '/thinkphp/library/think', $vendorDir . '/topthink/think-image/src', $vendorDir . '/topthink/think-queue/src', $vendorDir . '/5ini99/think-addons/src'),
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
     'Workerman\\' => array($vendorDir . '/workerman/workerman'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),

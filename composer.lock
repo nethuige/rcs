@@ -4,8 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0dea8b5bbfd59816a5e7f769ec59d1f6",
+    "hash": "40a12ed2161672c6b17f1409ef563097",
+    "content-hash": "92e01776147541c5390b4ef6fa9b71f4",
     "packages": [
+        {
+            "name": "5ini99/think-addons",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/5ini99/think-addons.git",
+                "reference": "078281eee61afcc55b97f4ff001de65bca4ad974"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/5ini99/think-addons/078281eee61afcc55b97f4ff001de65bca4ad974.zip",
+                "reference": "078281eee61afcc55b97f4ff001de65bca4ad974",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "topthink/think-helper": ">=1.0.4",
+                "topthink/think-installer": ">=1.0.10"
+            },
+            "type": "library",
+            "extra": {
+                "think-config": {
+                    "addons": "src/config.php"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "think\\": "src/"
+                },
+                "files": [
+                    "src/common.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "xiaobo.sun",
+                    "email": "xiaobo.sun@qq.com"
+                }
+            ],
+            "description": "addons package for thinkphp5",
+            "homepage": "https://github.com/5ini99/think-addons",
+            "time": "2017-01-16 02:47:26"
+        },
         {
             "name": "5ini99/think-auth",
             "version": "dev-master",
@@ -41,7 +89,7 @@
             ],
             "description": "auth package for thinkphp5",
             "homepage": "https://github.com/5ini99/think-auth",
-            "time": "2016-11-28T01:48:52+00:00"
+            "time": "2016-11-28 01:48:52"
         },
         {
             "name": "doctrine/instantiator",
@@ -95,7 +143,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2015-06-14T21:17:01+00:00"
+            "time": "2015-06-14 21:17:01"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -149,7 +197,7 @@
                 "reflection",
                 "static analysis"
             ],
-            "time": "2015-12-27T11:43:31+00:00"
+            "time": "2015-12-27 11:43:31"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -194,7 +242,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-09-30T07:12:33+00:00"
+            "time": "2016-09-30 07:12:33"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -241,7 +289,7 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2016-11-25T06:54:22+00:00"
+            "time": "2016-11-25 06:54:22"
         },
         {
             "name": "phpspec/prophecy",
@@ -304,7 +352,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2016-11-21T14:58:47+00:00"
+            "time": "2016-11-21 14:58:47"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -366,7 +414,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-06T15:47:00+00:00"
+            "time": "2015-10-06 15:47:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -413,7 +461,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2016-10-03T07:40:28+00:00"
+            "time": "2016-10-03 07:40:28"
         },
         {
             "name": "phpunit/php-text-template",
@@ -454,7 +502,7 @@
             "keywords": [
                 "template"
             ],
-            "time": "2015-06-21T13:50:34+00:00"
+            "time": "2015-06-21 13:50:34"
         },
         {
             "name": "phpunit/php-timer",
@@ -498,7 +546,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2016-05-12T18:03:57+00:00"
+            "time": "2016-05-12 18:03:57"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -547,7 +595,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2016-11-15T14:06:22+00:00"
+            "time": "2016-11-15 14:06:22"
         },
         {
             "name": "phpunit/phpunit",
@@ -619,7 +667,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-01-22T08:37:05+00:00"
+            "time": "2017-01-22 08:37:05"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -675,7 +723,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-10-02T06:51:40+00:00"
+            "time": "2015-10-02 06:51:40"
         },
         {
             "name": "sebastian/comparator",
@@ -739,7 +787,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2016-11-19T09:18:40+00:00"
+            "time": "2016-11-19 09:18:40"
         },
         {
             "name": "sebastian/diff",
@@ -791,7 +839,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2015-12-08T07:14:41+00:00"
+            "time": "2015-12-08 07:14:41"
         },
         {
             "name": "sebastian/environment",
@@ -841,7 +889,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2016-08-18T05:49:44+00:00"
+            "time": "2016-08-18 05:49:44"
         },
         {
             "name": "sebastian/exporter",
@@ -908,7 +956,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2016-06-17T09:04:28+00:00"
+            "time": "2016-06-17 09:04:28"
         },
         {
             "name": "sebastian/global-state",
@@ -959,7 +1007,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2015-10-12T03:26:01+00:00"
+            "time": "2015-10-12 03:26:01"
         },
         {
             "name": "sebastian/recursion-context",
@@ -1012,7 +1060,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2015-11-11T19:50:13+00:00"
+            "time": "2015-11-11 19:50:13"
         },
         {
             "name": "sebastian/version",
@@ -1047,7 +1095,7 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-            "time": "2015-06-21T13:59:46+00:00"
+            "time": "2015-06-21 13:59:46"
         },
         {
             "name": "symfony/dom-crawler",
@@ -1103,7 +1151,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-02T20:30:24+00:00"
+            "time": "2017-01-02 20:30:24"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1162,7 +1210,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14T01:06:16+00:00"
+            "time": "2016-11-14 01:06:16"
         },
         {
             "name": "symfony/yaml",
@@ -1217,7 +1265,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-03T13:51:32+00:00"
+            "time": "2017-01-03 13:51:32"
         },
         {
             "name": "topthink/framework",
@@ -1268,7 +1316,7 @@
                 "orm",
                 "thinkphp"
             ],
-            "time": "2017-01-23T05:59:21+00:00"
+            "time": "2017-01-23 05:59:21"
         },
         {
             "name": "topthink/think-angular",
@@ -1308,7 +1356,7 @@
             ],
             "description": "think angular view engine",
             "homepage": "http://kancloud.cn/shuai/php-angular",
-            "time": "2016-12-21T04:21:12+00:00"
+            "time": "2016-12-21 04:21:12"
         },
         {
             "name": "topthink/think-captcha",
@@ -1344,7 +1392,7 @@
                 }
             ],
             "description": "captcha package for thinkphp5",
-            "time": "2016-07-06T01:47:11+00:00"
+            "time": "2016-07-06 01:47:11"
         },
         {
             "name": "topthink/think-helper",
@@ -1380,7 +1428,7 @@
                 }
             ],
             "description": "The ThinkPHP5 Helper Package",
-            "time": "2016-12-01T07:08:40+00:00"
+            "time": "2016-12-01 07:08:40"
         },
         {
             "name": "topthink/think-image",
@@ -1420,7 +1468,7 @@
                 }
             ],
             "description": "The ThinkPHP5 Image Package",
-            "time": "2016-09-29T06:05:43+00:00"
+            "time": "2016-09-29 06:05:43"
         },
         {
             "name": "topthink/think-installer",
@@ -1461,7 +1509,7 @@
                     "email": "448901948@qq.com"
                 }
             ],
-            "time": "2016-12-01T09:08:45+00:00"
+            "time": "2016-12-01 09:08:45"
         },
         {
             "name": "topthink/think-migration",
@@ -1497,7 +1545,7 @@
                     "email": "448901948@qq.com"
                 }
             ],
-            "time": "2016-10-17T03:31:17+00:00"
+            "time": "2016-10-17 03:31:17"
         },
         {
             "name": "topthink/think-mongo",
@@ -1531,7 +1579,7 @@
                 }
             ],
             "description": "mongodb driver for thinkphp5",
-            "time": "2016-11-17T13:20:01+00:00"
+            "time": "2016-11-17 13:20:01"
         },
         {
             "name": "topthink/think-queue",
@@ -1576,7 +1624,7 @@
                 }
             ],
             "description": "The ThinkPHP5 Queue Package",
-            "time": "2016-12-01T04:29:39+00:00"
+            "time": "2016-12-01 04:29:39"
         },
         {
             "name": "topthink/think-sae",
@@ -1610,7 +1658,7 @@
                 }
             ],
             "description": "sae support for thinkphp5",
-            "time": "2016-10-08T10:53:21+00:00"
+            "time": "2016-10-08 10:53:21"
         },
         {
             "name": "topthink/think-testing",
@@ -1651,7 +1699,7 @@
                     "email": "448901948@qq.com"
                 }
             ],
-            "time": "2016-08-08T09:43:56+00:00"
+            "time": "2016-08-08 09:43:56"
         },
         {
             "name": "topthink/think-worker",
@@ -1688,7 +1736,7 @@
                 }
             ],
             "description": "workerman extend for thinkphp5",
-            "time": "2016-10-08T06:07:03+00:00"
+            "time": "2016-10-08 06:07:03"
         },
         {
             "name": "webmozart/assert",
@@ -1738,7 +1786,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2016-11-23T20:04:58+00:00"
+            "time": "2016-11-23 20:04:58"
         },
         {
             "name": "workerman/workerman",
@@ -1784,7 +1832,7 @@
                 "asynchronous",
                 "event-loop"
             ],
-            "time": "2016-12-22T14:28:34+00:00"
+            "time": "2016-12-22 14:28:34"
         }
     ],
     "packages-dev": [],

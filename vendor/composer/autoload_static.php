@@ -13,6 +13,7 @@ class ComposerStaticInit72a85f69782724a9ddb9dfee0362af6f
         'ddc3cd2a04224f9638c5d0de6a69c7e3' => __DIR__ . '/..' . '/topthink/think-migration/src/config.php',
         'cc56288302d9df745d97c934d6a6e5f0' => __DIR__ . '/..' . '/topthink/think-queue/src/common.php',
         '72c97b53391125cae04082a81029f42d' => __DIR__ . '/..' . '/topthink/think-testing/src/config.php',
+        '2cd73290f8e6fac63cdf82efabea125f' => __DIR__ . '/..' . '/5ini99/think-addons/src/common.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -101,6 +102,7 @@ class ComposerStaticInit72a85f69782724a9ddb9dfee0362af6f
             0 => __DIR__ . '/../..' . '/thinkphp/library/think',
             1 => __DIR__ . '/..' . '/topthink/think-image/src',
             2 => __DIR__ . '/..' . '/topthink/think-queue/src',
+            3 => __DIR__ . '/..' . '/5ini99/think-addons/src',
         ),
         'phpDocumentor\\Reflection\\' => 
         array (

@@ -62,9 +62,9 @@ class AuthRule extends Base
    	public function create(Request $request)
     {
 		if($request->isPost()){
-			$AuthRuleModel = new AuthRuleModel($_POST);
-			$AuthRuleModel->allowField(true)->save();
-			$id = $AuthRuleModel->id;
+			$authRuleModel = new AuthRuleModel($_POST);
+			$authRuleModel->allowField(true)->save();
+			$id = $authRuleModel->id;
 			if($id){
 				$res = ["data"=>$id,"status"=>true,"msg"=>"添加成功"];
 			}else{
