@@ -25,6 +25,11 @@
     <script src="__PUBLIC__/js/plugins/pace/pace.min.js"></script>
     <!--layer-->
     <script src="__PUBLIC__/js/plugins/layer/layer.min.js"></script>
+    <!--toastr-->
+    <link href="__PUBLIC__/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <script src="__PUBLIC__/js/plugins/toastr/toastr.min.js"></script>
+    <!--common-->
+    <script src="__PUBLIC__/js/common.js"></script>
     <script>
         $(function () {
             //修改密码
@@ -43,14 +48,15 @@
                             toastr.warning("请填写完整信息","系统提示");
                             return false;
                         }
-                        var params = $("#modify-pwd-form").serializeObject();
+                        var params = $("#form1").serializeObject();
                         $.post("{:url('user/modifyPwd')}",params,function(data){
+                            layer.close(layerIndex);
                             if(data.status){
-                                layer.close(layerIndex);
                                 toastr.success(data.msg,"系统提示");
                             }else{
                                 toastr.error(data.msg,"系统提示");
                             }
+                            document.getElementById("form1").reset();
                         });
                     }
                 });

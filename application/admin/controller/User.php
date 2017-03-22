@@ -139,7 +139,19 @@ class User extends Base
      * @param Request $request
      */
     public function modifyPwd(Request $request){
-
+        $user = Session::get("user");
+        $old_password = md5($request->param('old_password'));
+        $new_password = $request->param('new_password');
+        $userModel = UserModel::where(['password'=>$old_password,'id'=>$user['id']])->select();
+        if($userModel->isEmpty()){
+            return ["status"=>false,"msg"=>"修改失败,原密码错误"];
+        }else{
+            $userModel = new UserModel();
+            $userModel->save([
+                'password'  => $new_password,
+            ],['id' => $user['id']]);
+            return ["status"=>true,"msg"=>"修改成功"];
+        }
     }
    	/*
 	* 真实删除
