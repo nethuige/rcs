@@ -140,23 +140,31 @@ class AuthRule extends Base
      * @return array|false|\PDOStatement|string|\think\Collection
      */
    	public function getRuleTree(Request $request){
-   		//规则树
-   		$list = AuthRuleModel::field("id,title text,pid parent")->order("sort asc")->select();
-   		$list_id = array_column($list->toArray(),'id'); //获取id列
-   		//用户组拥有的规则
-   		$id = $request->param("id"); //用户组id
-	   	if(isset($id)){
-	   		$groupModel = AuthGroupModel::get($id);
-	   		if(!empty($groupModel)){
-	   			$rules_id = explode(',', $groupModel['rules']);
-	   			for($i=0;$i<count($rules_id);$i++){
-	   				$list_index = array_keys($list_id,$rules_id[$i]); //匹配规则id列对应的索引
-		   			!empty($list_index) && $list[$list_index[0]]['state'] = ["opened"=>true,"selected"=>true]; //设置节点选中
-		   		}
-	   		}
-   		}
-   		$list[] = array("id"=>0,"text"=>"追偿案管理系统","icon"=>"fa fa-desktop","parent"=>"#");
-		return $list;
-   	}
 
+        //规则树
+        $list = AuthRuleModel::field("id,title text,pid parent")->order("sort asc")->select();
+        $list_id = array_column($list->toArray(),'id'); //获取id列
+        $list_pid = array_column($list->toArray(),'parent'); //获取pid列
+        //用户组拥有的规则
+        $id = $request->param("id"); //用户组id
+        if(isset($id)){
+            $groupModel = AuthGroupModel::get($id);
+            if(!empty($groupModel)){
+                $rules_id = explode(',', $groupModel['rules']);
+                for($i=0;$i<count($rules_id);$i++){
+                    $list_index = array_keys($list_id,$rules_id[$i]); //匹配[组规则id]列对应[规则集合]的索引
+                    if(!empty($list_index)){
+                        $_child = array_keys($list_pid,$rules_id[$i]); //是否存在下级节点
+                        if(!empty($_child)){
+                            $list[$list_index[0]]['state'] = ["opened"=>true]; //存在儿子节点，不能默认选中父节点，不然会导致儿子节点全部是选中状态
+                        }else{
+                            $list[$list_index[0]]['state'] = ["opened"=>true,"selected"=>true]; //设置没有儿子节点的节点选中
+                        }
+                    }
+                }
+            }
+        }
+        $list[] = array("id"=>0,"text"=>"追偿案管理系统","icon"=>"fa fa-desktop","parent"=>"#");
+        return $list;
+   	}
 }

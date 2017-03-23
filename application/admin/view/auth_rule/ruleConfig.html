@@ -78,7 +78,12 @@
         });
         //保存配置
         $("#save-btn").on("click",function(){
-            var rules = ruleJstree.jstree("get_selected").join(',');//获取所有选中节点Id
+            var rules = ruleJstree.jstree("get_selected");//获取所有选中节点Id
+            //获取父节点undetermined状态，子节点没有全部选中的情况下也获取父节点
+            ruleJstree.find(".jstree-checked, .jstree-undetermined ").each(function () {
+                rules.push($(this).closest('li').attr("id"));
+            });
+            rules = rules.join(',');
             var groupid = groupJstree.jstree("get_selected");
             if(groupid[0]==undefined){toastr.warning('请选择用户组',"系统提示");return false;}
             var params = {groupid:groupid[0],rules:rules};
@@ -120,8 +125,8 @@
             },
             'checkbox' : {  
                 // 禁用级联选中  
-                'three_state' : true,       
-                'cascade' : 'down' //有三个选项，up, down, undetermined; 使用前需要先禁用three_state  
+                'three_state' : true,
+                'cascade' : 'up' //有三个选项，up, down, undetermined; 使用前需要先禁用three_state
             },
             "types": {
                 "default": {
