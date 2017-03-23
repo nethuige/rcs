@@ -120,17 +120,7 @@ class User extends Base
      */
     public function myinfo()
     {
-        $user = Session::get("user");
-        $userinfo["username"] = $user['username'];
-        $userinfo["face"] = $user['face'];
-        $userinfo["group"] = $user['groups'][0];
-        $userinfo["comname"] = $user['comname'];
-        $userinfo["mobile"] = $user['mobile'];
-        $userinfo["tel"] = $user['tel'];
-        $userinfo["email"] = $user['email'];
-        $userinfo["last_login_time"] = $user['last_login_time'];
-        $userinfo["last_login_ip"] = $user['last_login_ip'];
-        $this->assign("userinfo", $userinfo);
+        $this->assign("userinfo", $this->userinfo);
         return $this->fetch();
     }
 
