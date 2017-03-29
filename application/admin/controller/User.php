@@ -143,6 +143,23 @@ class User extends Base
             return ["status"=>true,"msg"=>"修改成功"];
         }
     }
+    /**
+     * 获取用户
+     * @param string q 搜索词
+     * @param string page_limit 每页数量
+     * @param string page 页码
+     * @return json res 用户列表
+     */
+    public function getUserList(Request $request){
+        $q = $request->param('q');
+        $page_limit = $request->param('page_limit');
+        $page = $request->param('page');
+        $where = ["status"=>1,"usercode|username"=>["like","%{$q}%"]];
+        $list = UserModel::where($where)->field(['username'=>'text','usercode'=>'id','face','comname'])->page($page,$page_limit)->select();
+        $count = UserModel::where($where)->count();
+        $res = ["rows"=>$list,"total"=>$count];
+        return $res;
+    }
    	/*
 	* 真实删除
    	*/

@@ -47,40 +47,39 @@
         }
     </style>
     <script>
-        //上传配置
-        var UploaderConfig = {
-            pick: {
-                id: '#filePicker',
-                label: '<img src="__PUBLIC__/img/icon-upload-face.png" />'
-            },
-            dnd: '#uploader .queueList',
-            paste: document.body,
-            accept: {
-                title: 'Images',
-                extensions: 'gif,jpg,jpeg,bmp,png',
-                mimeTypes: 'image/*'
-            },
-            // swf文件路径
-            swf: 'Uploader.swf',
-            disableGlobalDnd: true,
-            chunked: true,
-            server: "{:url('upload/uploadFace')}",
-            fileNumLimit: 1,
-            fileSizeLimit: 1 * 1024 * 1024,    // 5 M
-            fileSingleSizeLimit: 1 * 1024 * 1024    // 1 M
-        };
-        //上传成功(非服务端成功)回调
-        function UploadSuccess(ret){
-            if(ret.status){
-                toastr.success(ret.msg, "系统提示");
-                $("#face").val(ret.filename);
-            }else{
-                toastr.error("上传失败,请联系管理员", "系统提示");
-            }
-        }
         $(function () {
+            //上传初始化
+            UploaderServer.init({uploadConfig:{
+                pick: {
+                    id: '#filePicker',
+                    label: '<img src="__PUBLIC__/img/icon-upload-face.png" />'
+                },
+                dnd: '#uploader .queueList',
+                paste: document.body,
+                accept: {
+                    title: 'Images',
+                    extensions: 'gif,jpg,jpeg,bmp,png',
+                    mimeTypes: 'image/*'
+                },
+                // swf文件路径
+                swf: 'Uploader.swf',
+                disableGlobalDnd: true,
+                chunked: true,
+                server: "{:url('upload/uploadFace')}",
+                fileNumLimit: 1,
+                fileSizeLimit: 1 * 1024 * 1024,    // 5 M
+                fileSingleSizeLimit: 1 * 1024 * 1024    // 1 M
+            },uploadSuccess:function(ret){
+                if(ret.status){
+                    toastr.success(ret.msg, "系统提示");
+                    $("#face").val(ret.filename);
+                }else{
+                    toastr.error("上传失败,请联系管理员", "系统提示");
+                }
+            }});
+            //switch初始化
             Common.InitSwitch('.js-switch');
-            Common.GetComList({"url":"{:url('company/getComList')}","id":"#comcode","pageisze":10}); //取归属公司
+            Common.GetSelect2Remote({"url":"{:url('company/getComList')}","id":"#comcode","pageisze":10}); //取归属公司
             var e = "<i class='fa fa-times-circle'></i> ";
             $("#form1").validate({
                 rules: {
@@ -212,7 +211,7 @@
                                     <input type="text" id="tel" name="tel" placeholder="" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="name">邮箱</label>
+                                    <label for="email">邮箱</label>
                                     <input type="text" id="email" name="email" placeholder="" class="form-control">
                                 </div>
                                 <div class="form-group">

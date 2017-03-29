@@ -26,7 +26,7 @@ $.fn.serializeObject = function () {
     return o;
 };
 
-//json对象直接复制给form表单
+//json对象直接赋值给form表单
 $.fn.setForm = function (jsonValue) {
     var obj = this;
     $.each(jsonValue, function (name, ival) {
@@ -227,10 +227,9 @@ var Common = {
             switchery.handleOnchange(true);
         }
     },
-
-    //获取归属公司列表
+    //使用select2获取远程数据
     //id:select2元素id，url:请求地址，pagesize:每页数量
-    GetComList: function (config) {
+    GetSelect2Remote: function (config) {
         pagesize = config.pagesize == undefined && 10;
         var select2Obj = $(config.id).select2({
             placeholder: "请选择",
@@ -263,18 +262,43 @@ var Common = {
             minimumInputLength: 0,
             templateResult: function (repo) {
                 if (repo.loading) return repo.text;
-                var markup = '<div><strong>' + repo.text + '</strong></div><div>' + repo.id + '</div>';
+                if(config.iconpath==undefined){
+                    var markup = '<div><strong>' + repo.text + '</strong></div>' +
+                        '<div>' + repo.id + '</div>';
+                }else{
+                    var markup = '<div>'+
+                                    '<img style="margin-right:10px;width:38px;' +
+                        'height:38px;border-radius:38px;float:left;border:1px solid #ccc;" ' +
+                                            'src="'+config.iconpath+'/'+repo.face+'"/>'+
+                                 '</div>'+
+                                 '<div style="">'+
+                                        '<strong>' + repo.text + '</strong>'+
+                                        '<span style="margin-left:3px;line-height:20px;">' +
+                                         '<'+repo.id+'></span>'+
+                                 '</div>'+
+                                 '<div>'+
+                                    '<span><i class="fa fa-map-marker"></i> '+repo.comname+'</span>' +
+                                 '</div>'+
+                                 '<div style="clear:both;width:0;height:0;"></div>';
+
+                    return markup;
+                }
+                //if (repo.loading) return repo.text;
+                //var markup = '<div><strong>' + repo.text + '</strong></div><div>' + repo.id + '</div>';
                 //var markup = '<div><strong>' + repo.comname + '</strong></div><div>' + repo.id + '</div>';
                 return markup;
             }, //搜索结果显示
             templateSelection: function (repo) {
                 //return repo.comname || repo.text;
-                return repo.text;
+                if (!repo.id) { return repo.text; }
+                if(config.iconpath==undefined) return repo.text;
+                return '<span><img src="'+config.iconpath+'/'+repo.face+'" ' +
+                    'style="width:20px;height:20px;border-radius:20px;margin-top:-3px;" /> '
+                    + repo.text + '</span>';
             } //选择结果显示
         });
         return select2Obj;
     },
-
     //创建一个高级搜索(popover)
     //tid:作为搜素表单内容的目标元素id选择器,bid:显示高级搜索表单按钮id,sid:提交搜索按钮id
     //cid:关闭搜索按钮id,fid:搜索表单id
