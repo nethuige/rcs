@@ -1,5 +1,7 @@
 var UploaderServer = {
+    isInit:false,
     init:function(config){
+
         var $ = jQuery,    // just in case. Make sure it's not an other libaray.
 
         $wrap = $('#uploader'),
@@ -420,5 +422,9 @@ var UploaderServer = {
 
         $upload.addClass( 'state-' + state );
         updateTotalProgress();
+
+        UploaderServer.isInit = true;
+
+        return uploader;
     }
 };

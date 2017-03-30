@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新增案件</title>
+    <title>
+        新增案件
+    </title>
     <meta name="keywords" content="新增案件">
     <meta name="description" content="新增案件">
     <link rel="shortcut icon" href="favicon.ico">
@@ -11,100 +14,181 @@
     <link href="__PUBLIC__/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
     <link href="__PUBLIC__/css/animate.min.css" rel="stylesheet">
     <link href="__PUBLIC__/css/style.min.css?v=4.0.0" rel="stylesheet">
-    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
-    <script src="__PUBLIC__//js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4">
+    </script>
+    <script src="__PUBLIC__//js/bootstrap.min.js?v=3.3.5">
+    </script>
     <!-- Morris -->
     <link href="__PUBLIC__/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
     <!--layer-->
-    <script src="__PUBLIC__/js/plugins/layer/layer.min.js"></script>
+    <script src="__PUBLIC__/js/plugins/layer/layer.min.js">
+    </script>
     <!--switchery-->
     <link href="__PUBLIC__/css/plugins/switchery/switchery.css" rel="stylesheet">
-    <script src="__PUBLIC__/js/plugins/switchery/switchery.js"></script>
+    <script src="__PUBLIC__/js/plugins/switchery/switchery.js">
+    </script>
     <!--select2-->
     <link href="__PUBLIC__/css/plugins/select2/select2.min.css" rel="stylesheet">
-    <script src="__PUBLIC__/js/plugins/select2/select2.full.min.js"></script>
-    <script src="__PUBLIC__/js/plugins/select2/i18n/zh-CN.js"></script>
+    <script src="__PUBLIC__/js/plugins/select2/select2.full.min.js">
+    </script>
+    <script src="__PUBLIC__/js/plugins/select2/i18n/zh-CN.js">
+    </script>
     <!--toastr-->
     <link href="__PUBLIC__/css/plugins/toastr/toastr.min.css" rel="stylesheet">
-    <script src="__PUBLIC__/js/plugins/toastr/toastr.min.js"></script>
+    <script src="__PUBLIC__/js/plugins/toastr/toastr.min.js">
+    </script>
     <!--webuploader-->
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/plugins/webuploader/webuploader.css">
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/webuploader.css">
-    <script src="__PUBLIC__/js/plugins/webuploader/webuploader.min.js"></script>
-    <script src="__PUBLIC__/js/webuploader.js"></script>
+    <script src="__PUBLIC__/js/plugins/webuploader/webuploader.min.js">
+    </script>
+    <script src="__PUBLIC__/js/webuploader.js">
+    </script>
     <!--validate-->
-    <script src="__PUBLIC__/js/plugins/validate/jquery.validate.min.js"></script>
-    <script src="__PUBLIC__/js/plugins/validate/messages_zh.min.js"></script>
+    <script src="__PUBLIC__/js/plugins/validate/jquery.validate.min.js">
+    </script>
+    <script src="__PUBLIC__/js/plugins/validate/messages_zh.min.js">
+    </script>
     <!--common-->
-    <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/js/common.js">
+    </script>
     <style>
-        #uploader .placeholder .webuploader-pick {
-            background-color: transparent !important;
-            color: #333;
-            border: 2px dashed #e6e6e6;
-            padding: 32px 32px;
-            margin: 0px !important;
-        }
-        #form1 .col-md-6{
-            margin-top:10px;
+        #form1 .col-md-6 {
+            margin-top: 10px;
         }
     </style>
     <script>
         $(function () {
+            var lawyer = {}; //律师对象
+            var files = []; //存储上传文件id
             Common.InitSwitch('.js-switch');
-            Common.GetSelect2Remote({"url":"{:url('user/getUserList')}","id":"#findcode","pageisze":10,"iconpath":'__UPLOAD__'});  //取归属公司
-            Common.GetSelect2Remote({"url":"{:url('user/getUserList')}","id":"#agentcode","pageisze":10,"iconpath":'__UPLOAD__'});
+            Common.GetSelect2Remote({
+                "url": "{:url('user/getUserList')}",
+                "id": "#findcode",
+                "pageisze": 10,
+                "iconpath": '__UPLOAD__'
+            }); //取归属公司
+            Common.GetSelect2Remote({
+                "url": "{:url('user/getUserList')}",
+                "id": "#agentcode",
+                "pageisze": 10,
+                "iconpath": '__UPLOAD__'
+            });
             //是否聘请律师
-            $("#has_lawyer").on("change",function(){
-               $(this).is(':checked') ?  $("#lawyer-div").toggle(600) : $("#lawyer-div").toggle(600);
-            });
+            $("#has_lawyer").on("change",
+                function () {
+                    $(this).is(':checked') ? $("#lawyer-div").toggle(600) : $("#lawyer-div").toggle(600);
+                });
             //上传初始化
-            $('a[data-toggle="tab"]').on('shown.bs.tab',function(e){
-                if($(e.target)[0].hash=="#tab-3"){
-                    //上传初始化
-                    UploaderServer.init({uploadConfig:{
-                        pick: {
-                            id: '#filePicker',
-                            label: '<img src="__PUBLIC__/img/icon-upload-file.png" />'
-                        },
-                        dnd: '#uploader .queueList',
-                        paste: document.body,
-                        accept: {
-                            title: '文件上传',
-                            extensions: 'doc,docx,pdf',
-                            mimeTypes: '.doc,.docx,.pdf'
-                        },
-                        // swf文件路径
-                        swf: 'Uploader.swf',
-                        disableGlobalDnd: true,
-                        chunked: true,
-                        server: "{:url('upload/uploadFile')}",
-                        fileNumLimit: 1,
-                        fileSizeLimit: 1 * 1024 * 1024,    // 5 M
-                        fileSingleSizeLimit: 5 * 1024 * 1024    // 1 M
-                    },uploadSuccess:function(ret){
-                        //上传成功(非服务端成功)回调
-                        if (ret.status) {
-                            toastr.success(ret.msg, "系统提示");
-                            alert(ret.filename);
-                            //$("#face").val(ret.filename);
-                        } else {
-                            toastr.error("上传失败,请联系管理员", "系统提示");
+            $('a[data-toggle="tab"]').on('shown.bs.tab',
+                function (e) {
+                    if ($(e.target)[0].hash == "#tab-3" && !UploaderServer.isInit) {
+                        //上传初始化
+                        UploaderServer.init({
+                            uploadConfig: {
+                                pick: {
+                                    id: '#filePicker',
+                                    label: '<img src="__PUBLIC__/img/icon-upload-file.png" />'
+                                },
+                                dnd: '#uploader .queueList',
+                                paste: document.body,
+                                accept: {
+                                    title: '文件上传',
+                                    extensions: 'doc,docx,pdf',
+                                    mimeTypes: '.doc,.docx,.pdf'
+                                },
+                                // swf文件路径
+                                swf: 'Uploader.swf',
+                                disableGlobalDnd: true,
+                                chunked: true,
+                                server: "{:url('upload/uploadFile')}",
+                                fileNumLimit: 10,
+                                fileSizeLimit: 50 * 1024 * 1024,
+                                // 20 M
+                                fileSingleSizeLimit: 5 * 1024 * 1024 // 1 M
+                            },
+                            uploadSuccess: function (ret) {
+                                //上传成功(非服务端成功)回调
+                                if (ret.status) {
+                                    files.push(ret.file.id);
+                                    toastr.success(ret.msg, "系统提示");
+                                } else {
+                                    toastr.error("上传失败,请联系管理员", "系统提示");
+                                }
+                            }
+                        });
+                    }
+                });
+            //添加律师
+            $("#create-lawyer-btn").on("click",function(){
+                document.getElementsById("create-lawyer-form").reset();
+                var layerIndex = layer.open({
+                    type: 1,
+                    title:'添加律师',
+                    skin: 'layui-layer',
+                    area: ['700px'],
+                    maxmin: true,
+                    closeBtn:1,
+                    content: $("#create-lawyer-div"),
+                    btn: ['确认添加'],
+                    yes: function(index, layero){
+                        if($("#lawyer").val()=="" ||
+                            $("#lawyer_agent_type").val()=="" ||
+                            $("#lawyer_firms").val()=="" ||
+                            $("#review_level").val()==""){
+                            toastr.warning("请填写必填项","系统提示");
+                            return false;
                         }
-                    }});
-                }
+                        var data = $("#create-lawyer-form").serializeObject();
+                        var tr = [];
+                        tr.push('<tr><td>'+data.lawyer+'</td>');
+                        tr.push('<tr><td>'+data.law+'</td>');
+                        var tr = '<tr><td>''</td><td>你麻痹</td><td>你麻痹</td>' +
+                            '<td>你麻痹</td><td>你麻痹</td>' +
+                            '<td><a href="#" class="lawyer-edit-btn">编辑</a> | '+
+                            '<a href="#" class="lawyer-delete-btn">删除</a>'+
+                            '</td></tr>';
+                        layer.close(layerIndex);
+                        $("#lawyer-table").append(tr);
+                    }
+                });
             });
-            var e = "<i class='fa fa-times-circle'></i> ";
-            $("#form1").validate({
+
+            //表单验证
+            var e = "<i class='fa fa-times-circle'></i>";
+            $("#form5").validate({
                 rules: {
-                    usercode: {required: true, minlength: 6},
-                    username: {required: true},
-                    password: {required: true, minlength: 5},
-                    confirm_password: {required: true, minlength: 5, equalTo: "#password"},
-                    email: {required: true, email: true},
-                    mobile: {required: true, minlength: 11, isMobile: true},
-                    tel: {required: true},
-                    comcode: {required: true},
+                    usercode: {
+                        required: true,
+                        minlength: 6
+                    },
+                    username: {
+                        required: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 5
+                    },
+                    confirm_password: {
+                        required: true,
+                        minlength: 5,
+                        equalTo: "#password"
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    mobile: {
+                        required: true,
+                        minlength: 11,
+                        isMobile: true
+                    },
+                    tel: {
+                        required: true
+                    },
+                    comcode: {
+                        required: true
+                    },
                 },
                 messages: {
                     username: e + "请输入用户名",
@@ -137,22 +221,25 @@
                     var params = $("#form1").serializeObject();
                     params.comname = $("#comcode option:selected").text();
                     params.status = params.status == "" ? 0 : 1;
-                    $.post("{:url('user/create')}", params, function (data) {
-                        if (data.status) {
-                            $("#submit-btn").attr("disabled", true);
-                            toastr.success(data.msg + ",正在跳转...", "系统提示");
-                            setTimeout(function () {
-                                location.href = "{:url('user/index')}";
-                            }, 1500);
-                        } else {
-                            toastr.error(data.msg, "系统提示");
-                        }
-                    });
+                    $.post("{:url('user/create')}", params,
+                        function (data) {
+                            if (data.status) {
+                                $("#submit-btn").attr("disabled", true);
+                                toastr.success(data.msg + ",正在跳转...", "系统提示");
+                                setTimeout(function () {
+                                        location.href = "{:url('user/index')}";
+                                    },
+                                    1500);
+                            } else {
+                                toastr.error(data.msg, "系统提示");
+                            }
+                        });
                 }
             });
         });
     </script>
 </head>
+
 <body class="gray-bg">
 <div class="wrapper wrapper-content">
     <!--面板-->
@@ -160,13 +247,17 @@
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>新增案件</h5>
+                    <h5>
+                        新增案件
+                    </h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
+                            <i class="fa fa-chevron-up">
+                            </i>
                         </a>
                         <a class="close-link">
-                            <i class="fa fa-times"></i>
+                            <i class="fa fa-times">
+                            </i>
                         </a>
                     </div>
                 </div>
@@ -177,13 +268,19 @@
                             <div class="tabs-container">
                                 <ul class="nav nav-tabs">
                                     <li class="active">
-                                        <a data-toggle="tab" href="#tab-1" aria-expanded="true"> 初始信息</a>
+                                        <a data-toggle="tab" href="#tab-1" aria-expanded="true">
+                                            初始信息
+                                        </a>
                                     </li>
                                     <li class="">
-                                        <a data-toggle="tab" href="#tab-2" aria-expanded="false"> 律师聘请情况</a>
+                                        <a data-toggle="tab" href="#tab-2" aria-expanded="false">
+                                            律师聘请情况
+                                        </a>
                                     </li>
                                     <li class="">
-                                        <a data-toggle="tab" href="#tab-3" aria-expanded="false"> 资料上传</a>
+                                        <a data-toggle="tab" href="#tab-3" aria-expanded="false">
+                                            资料上传
+                                        </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
@@ -192,175 +289,357 @@
                                             <!--表单-->
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <form role="form" id="form1">
+                                                    <form role="form" id="form1" class="form-horizontal">
                                                         <div class="form-group">
-                                                            <label for="case_type">案件类型</label>
-                                                            <select type="text" id="case_type" name="case_type"
-                                                                    placeholder="请选择案件类型" class="form-control">
-                                                                <option value="">请选择</option>
-                                                                <option value="交强险">交强险</option>
-                                                                <option value="商业三者险">商业三者险</option>
-                                                                <option value="车损险">车损险</option>
-                                                                <option value="交强和商业险共有">交强和商业险共有</option>
-                                                                <option value="企财险">企财险</option>
-                                                                <option value="责任险">责任险</option>
-                                                                <option value="公路货运险">公路货运险</option>
-                                                                <option value="水路货运险">水路货运险</option>
-                                                                <option value="船舶险(沿海内河)">船舶险(沿海内河)</option>
-                                                                <option value="船舶险(沿洋)">船舶险(沿洋)</option>
-                                                                <option value="信用保证险">信用保证险</option>
-                                                                <option value="其他险种">其他险种</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="findcode">发现人</label>
-                                                            <select type="text" id="findcode" name="findcode"
-                                                                    placeholder="请选择发现人" class="form-control">
-                                                                <option value="">请选择</option>
-                                                                <option value="">发现人1</option>
-                                                                <option value="">发现人2</option>
-                                                                <option value="">发现人3</option>
-                                                                <option value="">发现人4</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="agentcode">经办人</label>
-                                                            <select type="text" id="agentcode" name="agentcode"
-                                                                    placeholder="请选择经办人" class="form-control">
-                                                                <option value="">请选择</option>
-                                                                <option value="">经办人1</option>
-                                                                <option value="">经办人2</option>
-                                                                <option value="">经办人3</option>
-                                                                <option value="">经办人4</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="registno">报案号</label>
-                                                            <div class="input-group">
-                                                                <input type="password" id="registno" name="registno"
-                                                                       placeholder="请输入报案号" class="form-control">
-                                                                <span class="input-group-btn">
-                                                                    <button type="button" class="btn btn-primary">查询</button>
-                                                                </span>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label for="case_type"
+                                                                           class="col-sm-2 control-label">
+                                                                        案件类型
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <select type="text"
+                                                                                id="case_type"
+                                                                                name="case_type"
+                                                                                placeholder="请选择案件类型"
+                                                                                class="form-control">
+                                                                            <option value="">
+                                                                                请选择
+                                                                            </option>
+                                                                            <option value="交强险">
+                                                                                交强险
+                                                                            </option>
+                                                                            <option value="商业三者险">
+                                                                                商业三者险
+                                                                            </option>
+                                                                            <option value="车损险">
+                                                                                车损险
+                                                                            </option>
+                                                                            <option value="交强和商业险共有">
+                                                                                交强和商业险共有
+                                                                            </option>
+                                                                            <option value="企财险">
+                                                                                企财险
+                                                                            </option>
+                                                                            <option value="责任险">
+                                                                                责任险
+                                                                            </option>
+                                                                            <option value="公路货运险">
+                                                                                公路货运险
+                                                                            </option>
+                                                                            <option value="水路货运险">
+                                                                                水路货运险
+                                                                            </option>
+                                                                            <option value="船舶险(沿海内河)">
+                                                                                船舶险(沿海内河)
+                                                                            </option>
+                                                                            <option value="船舶险(沿洋)">
+                                                                                船舶险(沿洋)
+                                                                            </option>
+                                                                            <option value="信用保证险">
+                                                                                信用保证险
+                                                                            </option>
+                                                                            <option value="其他险种">
+                                                                                其他险种
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="findcode"
+                                                                           class="col-sm-2 control-label">
+                                                                        发现人
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <select type="text"
+                                                                                id="findcode"
+                                                                                name="findcode"
+                                                                                class="col-md-6 form-control">
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label for="agentcode"
+                                                                           class="col-sm-2 control-label">
+                                                                        经办人
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <select type="text"
+                                                                                id="agentcode"
+                                                                                name="agentcode"
+                                                                                class="form-control">
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="registno"
+                                                                           class="col-sm-2 control-label">
+                                                                        报案号
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group">
+                                                                            <input type="text"
+                                                                                   id="registno"
+                                                                                   name="registno"
+                                                                                   placeholder="请输入报案号"
+                                                                                   class="form-control">
+                                                                            <span class="input-group-btn">
+                                                                                <button type="button"
+                                                                                        class="btn btn-primary">
+                                                                                    查询
+                                                                                </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr-line-dashed">
+                                                        </div>
                                                         <div class="form-group"
-                                                             style="border-left:5px solid #1AB394;padding-left:5px;">
-                                                            <strong>以下信息查询后自动带出</strong>
+                                                             style="border-left:5px solid #1AB394;padding-left:5px;
+                                                             margin-left:3px;">
+                                                            <strong>
+                                                                以下信息查询后自动带出
+                                                            </strong>
                                                         </div>
-                                                        <div class="form-group" style="margin-top:10px;">
-                                                            <div class="col-md-6">
-                                                                <label for="policyno">保单号</label>
-                                                                <span style="border-color:#C6BF6A;" type="text"
-                                                                      id="span-policyno" placeholder=""
-                                                                      class="form-control"></span>
-                                                                <input type="hidden" id="policyno" name="policyno"
-                                                                       placeholder=""
-                                                                       class="form-control">
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="insurance">保险标的</label>
-                                                                <span style="border-color:#C6BF6A;" type="text"
-                                                                      id="span-insurance" placeholder=""
-                                                                      class="form-control"></span>
-                                                                <input type="hidden" id="insurance" name="insurance"
-                                                                       placeholder=""
-                                                                       class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group" style="margin-top:10px;">
-                                                            <div class="col-md-6">
-                                                                <label for="insuredname">被保险人</label>
-                                                                <span style="border-color:#C6BF6A;" type="text"
-                                                                      id="span-insuredname" placeholder=""
-                                                                      class="form-control"></span>
-                                                                <input type="hidden" id="insuredname" name="insuredname"
-                                                                       placeholder=""
-                                                                       class="form-control">
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="danger_time">出险时间</label>
-                                                                <span style="border-color:#C6BF6A;" type="text"
-                                                                      id="span-danger_time" placeholder=""
-                                                                      class="form-control"></span>
-                                                                <input type="hidden" id="danger_time" name="danger_time"
-                                                                       placeholder=""
-                                                                       class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group" style="margin-top:10px;">
-                                                            <div class="col-md-6">
-                                                                <label for="danger_place">出险地点</label>
-                                                                <span style="border-color:#C6BF6A;" type="text"
-                                                                      id="span-danger_place" placeholder=""
-                                                                      class="form-control"></span>
-                                                                <input type="hidden" id="danger_place" name="danger_place"
-                                                                       placeholder=""
-                                                                       class="form-control">
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="insurance">出险原因</label>
-                                                                <span style="border-color:#C6BF6A;" type="text"
-                                                                      id="span-danger_reson" placeholder=""
-                                                                      class="form-control"></span>
-                                                                <input type="hidden" id="danger_reson" name="danger_reson"
-                                                                       placeholder=""
-                                                                       class="form-control">
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label for="policyno"
+                                                                           class="col-sm-2 control-label">
+                                                                        保单号
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <span style="border-color:#C6BF6A;" type="text"
+                                                                              id="span-policyno" class="form-control">
+                                                                        </span>
+                                                                        <input type="hidden"
+                                                                               id="policyno"
+                                                                               name="policyno"
+                                                                               placeholder=""
+                                                                               class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="insurance"
+                                                                           class="col-sm-2 control-label">
+                                                                        保险标的
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <span style="border-color:#C6BF6A;"
+                                                                              type="text"
+                                                                              id="span-insurance"
+                                                                              placeholder=""
+                                                                              class="form-control">
+                                                                        </span>
+                                                                        <input type="hidden"
+                                                                               id="insurance"
+                                                                               name="insurance"
+                                                                               placeholder=""
+                                                                               class="form-control">
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group" style="margin-top:10px;">
-                                                            <div class="col-md-6">
-                                                                <label for="amount_money">估损金额</label>
-                                                                <span style="border-color:#C6BF6A;" type="text"
-                                                                      id="span-amount_money" placeholder=""
-                                                                      class="form-control"></span>
-                                                                <input type="hidden" id="amount_money" name="amount_money"
-                                                                       placeholder=""
-                                                                       class="form-control">
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label for="insuredname"
+                                                                           class="col-sm-2 control-label">
+                                                                        被保险人
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <span style="border-color:#C6BF6A;"
+                                                                              type="text"
+                                                                              id="span-policyno"
+                                                                              placeholder=""
+                                                                              class="form-control">
+                                                                        </span>
+                                                                        <input type="hidden"
+                                                                               id="insuredname"
+                                                                               name="insuredname"
+                                                                               placeholder=""
+                                                                               class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="danger_time"
+                                                                           class="col-sm-2 control-label">
+                                                                        出险时间
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <span style="border-color:#C6BF6A;"
+                                                                              type="text"
+                                                                              id="span-insurance"
+                                                                              placeholder=""
+                                                                              class="form-control">
+                                                                        </span>
+                                                                        <input type="hidden"
+                                                                               id="danger_time"
+                                                                               name="danger_time"
+                                                                               placeholder=""
+                                                                               class="form-control">
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label for="insuredname"
+                                                                           class="col-sm-2 control-label">
+                                                                        出险地点
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <span style="border-color:#C6BF6A;"
+                                                                              type="text"
+                                                                              id="span-policyno"
+                                                                              placeholder=""
+                                                                              class="form-control">
+                                                                        </span>
+                                                                        <input type="hidden"
+                                                                               id="insuredname"
+                                                                               name="insuredname"
+                                                                               placeholder=""
+                                                                               class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="danger_time"
+                                                                           class="col-sm-2 control-label">
+                                                                        出险原因
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <span style="border-color:#C6BF6A;"
+                                                                              type="text"
+                                                                              id="span-insurance"
+                                                                              placeholder=""
+                                                                              class="form-control">
+                                                                        </span>
+                                                                        <input type="hidden"
+                                                                               id="danger_time"
+                                                                               name="danger_time"
+                                                                               placeholder=""
+                                                                               class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label for="insuredname"
+                                                                           class="col-sm-2 control-label">
+                                                                        估损金额
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <span style="border-color:#C6BF6A;"
+                                                                              type="text"
+                                                                              id="span-policyno"
+                                                                              placeholder=""
+                                                                              class="form-control">
+                                                                        </span>
+                                                                        <input type="hidden"
+                                                                               id="insuredname"
+                                                                               name="insuredname"
+                                                                               placeholder=""
+                                                                               class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
 
-                                                            </div>
-                                                        </div>
-                                                        <div style="clear:both;"></div>
-                                                        <div class="hr-line-dashed"></div>
-                                                        <div class="form-group">
-                                                            <label for="replevy_legal_rel">追偿基础法律关系</label>
-                                                            <input type="text" id="replevy_legal_rel" name="replevy_legal_rel"
-                                                                   placeholder=""
-                                                                   class="form-control">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="replevy_obj">追偿对象</label>
-                                                            <input type="text" id="replevy_obj" name="replevy_obj"
-                                                                   placeholder=""
-                                                                   class="form-control">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="replevy_plan_fee">拟追偿金额</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon">￥</span>
-                                                                <input type="text" id="replevy_plan_fee" name="replevy_plan_fee"
-                                                                   placeholder="单位：万"
-                                                                   class="form-control">
-                                                                <span class="input-group-addon">万</span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="remark">备注</label>
-                                                            <textarea type="text" id="remark" name="remark"
-                                                                      placeholder="" class="form-control"></textarea>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label for="case_type"
+                                                                           class="col-sm-2 control-label">
+                                                                        追偿基础法律关系
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text"
+                                                                               id="danger_time"
+                                                                               name="danger_time"
+                                                                               placeholder=""
+                                                                               class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="findcode"
+                                                                           class="col-sm-2 control-label">
+                                                                        追偿对象
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text"
+                                                                               id="replevy_obj"
+                                                                               name="replevy_obj"
+                                                                               placeholder=""
+                                                                               class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label for="findcode"
+                                                                           class="col-sm-2 control-label">
+                                                                        拟追偿金额
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group">
+                                                                        <span class="input-group-addon">
+                                                                            ￥
+                                                                        </span>
+                                                                            <input type="text"
+                                                                                   id="replevy_plan_fee"
+                                                                                   name="replevy_plan_fee"
+                                                                                   placeholder="单位：万"
+                                                                                   class="form-control">
+                                                                            <span class="input-group-addon">
+                                                                            万
+                                                                        </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="remark"
+                                                                           class="col-sm-2 control-label">
+                                                                        备注
+                                                                    </label>
+                                                                    <div class="col-sm-10">
+                                                                        <textarea type="text"
+                                                                                  id="remark"
+                                                                                  name="remark"
+                                                                                  placeholder=""
+                                                                                  class="form-control">
+                                                                        </textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr-line-dashed">
+                                                        </div>
                                                         <div class="form-group pull-left">
                                                             <div class="col-md-12">
-                                                                <button class="btn btn-primary" id="submit-btn"
-                                                                        type="submit">新增
+                                                                <button class="btn btn-primary"
+                                                                        id="submit-btn"
+                                                                        type="submit">
+                                                                    新增
                                                                 </button>
-                                                                <a href="{:url('claims_replevy/maintain')}" class="btn btn-danger"
+                                                                <a href="{:url('claims_replevy/maintain')}"
+                                                                   class="btn btn-danger"
                                                                    type="button">
-                                                                    <strong>取消</strong>
+                                                                    <strong>
+                                                                        取消
+                                                                    </strong>
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -376,77 +655,68 @@
                                                 <div class="col-sm-12">
                                                     <form role="form" id="form2">
                                                         <div class="form-group">
-                                                            <label for="has_lawyer">是否聘请律师</label>
-                                                            <input type="checkbox" id="has_lawyer" name="has_lawyer" class="js-switch" />
+                                                            <label for="has_lawyer">
+                                                                是否聘请律师
+                                                            </label>
+                                                            <input type="checkbox"
+                                                                   id="has_lawyer"
+                                                                   name="has_lawyer"
+                                                                   class="js-switch"
+                                                            />
                                                         </div>
-                                                        <div id="lawyer-div" style="display: none;">
-                                                        <div class="form-group">
-                                                            <label for="lawyer">律师人选</label>
-                                                            <input type="text" id="lawyer" name="lawyer"
-                                                                   placeholder=""
-                                                                   class="form-control">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="lawyer_agent_type">律师代理方式</label>
-                                                            <select type="text" id="lawyer_agent_type" name="lawyer_agent_type"
-                                                                    placeholder="请选择经办人" class="form-control">
-                                                                <option value="">请选择</option>
-                                                                <option value="固定收费">固定收费</option>
-                                                                <option value="固定加风险比例">固定加风险比例</option>
-                                                                <option value="纯风险收费">纯风险收费</option>
-                                                                <option value="按小时收费">按小时收费</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="lawyer_agent_type">审级</label>
-                                                            <select type="text" id="lawyer_agent_type" name="lawyer_agent_type"
-                                                                    placeholder="请选择经办人" class="form-control">
-                                                                <option value="">请选择</option>
-                                                                <option value="仲裁">仲裁</option>
-                                                                <option value="一审">一审</option>
-                                                                <option value="二审">二审</option>
-                                                                <option value="再审">再审</option>
-                                                                <option value="一揽子">一揽子</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group"
-                                                             style="border-left:5px solid #1AB394;padding-left:5px;">
-                                                            <strong>律师代理方案</strong>
-                                                        </div>
-                                                        <div class="form-group" >
-                                                            <div class="col-md-6">
-                                                                <label for="policyno">固定收费</label>
-                                                                <input type="text" id="policyno" name="policyno"
-                                                                       placeholder=""
-                                                                       class="form-control">
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <label for="insurance">风险比例</label>
-                                                                <input type="text" id="insurance" name="insurance"
-                                                                       placeholder=""
-                                                                       class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="col-md-6" style="margin-top:10px;">
-                                                                <label for="insuredname">差旅费</label>
-                                                                <input type="text" id="insuredname" name="insuredname"
-                                                                       placeholder=""
-                                                                       class="form-control">
-                                                            </div>
-                                                            <div class="col-md-6" style="margin-top:10px;">
-                                                                <label for="danger_time">其他费用</label>
-                                                                <input type="text" id="danger_time" name="danger_time"
-                                                                       placeholder=""
-                                                                       class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        </div>
-                                                    </form>
-                                                    </div>
+                                                        <button class="btn btn-success" id="create-lawyer-btn"
+                                                                type="button"><i class="fa fa-plus" aria-hidden="true"></i> 添加律师
+                                                        </button>
+                                                        <table class="table table-condensed table-bordered" id="lawyer-table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>律师人选</th>
+                                                                <th>律所</th>
+                                                                <th>代理方式</th>
+                                                                <th>审级</th>
+                                                                <th>代理方案</th>
+                                                                <th>操作</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <th scope="row">张三封</th>
+                                                                <td>应还的</td>
+                                                                <td>应还的</td>
+                                                                <td>撒旦法士大夫似的</td>
+                                                                <td>
+                                                                        <div style="display:inline-block;">
+                                                                            <span class="label-ext">固定费用：546131.45</span>
+                                                                            <span class="label-ext">风险比例：546131.45</span>
+                                                                        </div>
+                                                                        <div style="margin-top:5px;display:inline-block;">
+                                                                            <span class="label-ext">差旅费用：546131.45</span>
+                                                                            <span class="label-ext">其他费用：546131.45</span>
+                                                                        </div>
+                                                                </td>
+                                                                <td><a href="#" class="lawyer-edit-btn">编辑</a> |
+                                                                    <a href="#" class="lawyer-delete-btn">删除</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">孙悟空</th>
+                                                                <td>应还的</td>
+                                                                <td>第三方三</td>
+                                                                <td>阿斯顿发</td>
+                                                                <td>
+
+                                                                </td>
+                                                                <td><a href="#" class="lawyer-edit-btn">编辑</a> |
+                                                                    <a href="#" class="lawyer-delete-btn">删除</a>
+                                                                </td>
+                                                            </tr>
+
+                                                            </tbody>
+                                                        </table>
                                                     </form>
                                                 </div>
                                             </div>
+                                        </div>
                                     </div>
                                     <div id="tab-3" class="tab-pane">
                                         <div class="panel-body">
@@ -455,24 +725,38 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <input type="hidden" name="face" id="face">
-                                                        <label>资料上传</label> <span style="display: inline-block;"
-                                                                                  class="help-block m-b-none"><i
-                                                            class="fa fa-info-circle"></i> 仅支持doc/docx/pdf后缀的文件</span>
+                                                        <label>
+                                                            资料上传
+                                                        </label>
+                                                        <span style="display: inline-block;"
+                                                              class="help-block m-b-none">
+                                                                    <i class="fa fa-info-circle">
+                                                                    </i>
+                                                                    仅支持doc/docx/pdf后缀的文件
+                                                                </span>
                                                         <div id="uploader">
                                                             <div class="queueList">
                                                                 <div id="dndArea" class="placeholder">
-                                                                    <div id="filePicker"></div>
+                                                                    <div id="filePicker">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="statusBar" style="display:none;">
                                                                 <div class="progress">
-                                                                    <span class="text">0%</span>
-                                                                    <span class="percentage"></span>
+                                                                            <span class="text">
+                                                                                0%
+                                                                            </span>
+                                                                    <span class="percentage">
+                                                                            </span>
                                                                 </div>
-                                                                <div class="info"></div>
+                                                                <div class="info">
+                                                                </div>
                                                                 <div class="btns">
-                                                                    <div id="filePicker2"></div>
-                                                                    <div class="uploadBtn">开始上传</div>
+                                                                    <div id="filePicker2">
+                                                                    </div>
+                                                                    <div class="uploadBtn">
+                                                                        开始上传
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -490,6 +774,173 @@
         </div>
     </div>
 </div>
-<script src="__PUBLIC__/js/content.min.js?v=1.0.0"></script>
+<!--添加律师-->
+<div id="create-lawyer-div" style="padding:0px 35px;margin-top:15px;display: none;">
+    <form class="form-horizontal" id="create-lawyer-form">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="lawyer"
+                           class="col-sm-4 control-label">
+                        <span class="require-item">*</span> 律师人选
+                    </label>
+                    <div class="col-sm-8">
+                        <input type="text"
+                               id="lawyer"
+                               name="lawyer"
+                               placeholder=""
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="lawyer_firms"
+                           class="col-sm-4 control-label">
+                        <span class="require-item">*</span>  律所
+                    </label>
+                    <div class="col-sm-8">
+                        <input type="text"
+                               id="lawyer_firms"
+                               name="lawyer_firms"
+                               placeholder=""
+                               class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="lawyer_agent_type"
+                           class="col-sm-4 control-label">
+                        <span class="require-item">*</span> 代理方式
+                    </label>
+                    <div class="col-sm-8">
+                        <select type="text"
+                                id="lawyer_agent_type"
+                                name="lawyer_agent_type"
+                                class="form-control">
+                            <option value="">
+                                --请选择--
+                            </option>
+                            <option value="固定收费">
+                                固定收费
+                            </option>
+                            <option value="固定加风险比例">
+                                固定加风险比例
+                            </option>
+                            <option value="纯风险收费">
+                                纯风险收费
+                            </option>
+                            <option value="按小时收费">
+                                按小时收费
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="review_level"
+                           class="col-sm-4 control-label">
+                        <span class="require-item">*</span> 审级
+                    </label>
+                    <div class="col-sm-8">
+                        <select type="text"
+                                id="review_level"
+                                name="review_level"
+                                class="form-control">
+                            <option value="">
+                                --请选择--
+                            </option>
+                            <option value="仲裁">
+                                仲裁
+                            </option>
+                            <option value="一审">
+                                一审
+                            </option>
+                            <option value="二审">
+                                二审
+                            </option>
+                            <option value="再审">
+                                再审
+                            </option>
+                            <option value="一揽子">
+                                一揽子
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hr-line-dashed">
+        </div>
+        <div class="form-group"
+             style="border-left:5px solid #1AB394;padding-left:5px;">
+            <strong>
+                律师代理方案
+            </strong>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="fix_cost"
+                           class="col-sm-4 control-label">
+                        固定收费
+                    </label>
+                    <div class="col-sm-8">
+                        <input type="text"
+                               id="fix_cost"
+                               name="fix_cost"
+                               placeholder=""
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="risk_ratio"
+                           class="col-sm-4 control-label">
+                        风险比例
+                    </label>
+                    <div class="col-sm-8">
+                        <input type="text"
+                               id="risk_ratio"
+                               name="risk_ratio"
+                               placeholder=""
+                               class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="travel_cost"
+                           class="col-sm-4 control-label">
+                        差旅费
+                    </label>
+                    <div class="col-sm-8">
+                        <input type="text"
+                               id="travel_cost"
+                               name="travel_cost"
+                               placeholder=""
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="other_cost"
+                           class="col-sm-4 control-label">
+                        其他费用
+                    </label>
+                    <div class="col-sm-8">
+                        <input type="text"
+                               id="other_cost"
+                               name="other_cost"
+                               placeholder=""
+                               class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="__PUBLIC__/js/content.min.js?v=1.0.0">
+</script>
 </body>
 </html>
